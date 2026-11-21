@@ -7,7 +7,7 @@ Proyecto final de **Bases de Datos 2** — Ingeniería Informática, Universidad
 
 | Nombre | Usuario de GitHub | Módulos a cargo |
 |---|---|---|
-| _José Alejandro Alzate Arévalo_| _FellDev0303_ | _por definir_ |
+| _José Alejandro Alzate Arévalo_| _@FellDev0303_ | _por definir_ |
 | _Verónica Núñez Zorrilla_ | _@veronz07_ | _por definir_ |
 
 ## Descripción
