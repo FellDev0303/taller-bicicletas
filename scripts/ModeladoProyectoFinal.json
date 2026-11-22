@@ -1,0 +1,1058 @@
+use ProyectoBD2;
+
+db.createCollection("bicicletas", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "bicicletas",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "propietarioId": {
+                    "bsonType": "objectId"
+                },
+                "marca": {
+                    "bsonType": "string"
+                },
+                "modelo": {
+                    "bsonType": "string"
+                },
+                "tipo": {
+                    "bsonType": "string",
+                    "enum": [
+                        "urbana",
+                        "ruta",
+                        "montana",
+                        "electrica"
+                    ]
+                },
+                "color": {
+                    "bsonType": "string"
+                },
+                "numeroSerie": {
+                    "bsonType": "string"
+                },
+                "caracteristicas": {
+                    "bsonType": "object",
+                    "properties": {
+                        "tamanoMarco": {
+                            "bsonType": "string"
+                        },
+                        "material": {
+                            "bsonType": "string"
+                        },
+                        "tamanoRueda": {
+                            "bsonType": "string"
+                        },
+                        "tipoFrenos": {
+                            "bsonType": "string"
+                        },
+                        "transmision": {
+                            "bsonType": "string"
+                        },
+                        "suspension": {
+                            "bsonType": "object",
+                            "properties": {
+                                "informacion": {
+                                    "bsonType": "string"
+                                },
+                                "recorrido": {
+                                    "bsonType": "int"
+                                }
+                            },
+                            "additionalProperties": true,
+                            "required": [
+                                "informacion",
+                                "recorrido"
+                            ]
+                        },
+                        "bateria": {
+                            "bsonType": "object",
+                            "properties": {
+                                "capacidadWh": {
+                                    "bsonType": "double"
+                                },
+                                "voltajeV": {
+                                    "bsonType": "double"
+                                }
+                            },
+                            "additionalProperties": true,
+                            "required": [
+                                "capacidadWh",
+                                "voltajeV"
+                            ]
+                        },
+                        "motor": {
+                            "bsonType": "object",
+                            "properties": {
+                                "tipo": {
+                                    "bsonType": "string"
+                                },
+                                "potenciaW": {
+                                    "bsonType": "int"
+                                }
+                            },
+                            "additionalProperties": true,
+                            "required": [
+                                "tipo",
+                                "potenciaW"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "tamanoMarco",
+                        "material",
+                        "tamanoRueda",
+                        "tipoFrenos"
+                    ]
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "propietarioId",
+                "marca",
+                "modelo",
+                "tipo",
+                "color",
+                "caracteristicas"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.bicicletas.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+
+
+
+db.createCollection("citas", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "citas",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "clienteId": {
+                    "bsonType": "objectId"
+                },
+                "bicicletaId": {
+                    "bsonType": "objectId"
+                },
+                "fechaHora": {
+                    "bsonType": "date"
+                },
+                "motivo": {
+                    "bsonType": "string"
+                },
+                "estado": {
+                    "bsonType": "string",
+                    "enum": [
+                        "solicitada",
+                        "confirmada",
+                        "atendida",
+                        "cancelada"
+                    ]
+                },
+                "problemasObservados": {
+                    "bsonType": "string"
+                },
+                "serviciosInteres": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "objectId"
+                    }
+                },
+                "observacionCambio": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "clienteId",
+                "bicicletaId",
+                "fechaHora",
+                "motivo",
+                "estado"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.citas.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+db.citas.createIndex({
+    "bicicletaId": 1,
+    "fechaHora": 1
+},
+{
+    "name": "uq_citas_bicicleta_fecha_activa",
+    "unique": true,
+    "partialFilterExpression": {
+        "estado": {
+            "$in": [
+                "solicitada",
+                "confirmada"
+            ]
+        }
+    }
+});
+
+
+
+
+db.createCollection("ordenesServicio", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "ordenesServicio",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "clienteId": {
+                    "bsonType": "objectId"
+                },
+                "bicicleta": {
+                    "bsonType": "object",
+                    "properties": {
+                        "bicicletaId": {
+                            "bsonType": "objectId"
+                        },
+                        "marca": {
+                            "bsonType": "string"
+                        },
+                        "modelo": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "bicicletaId",
+                        "marca",
+                        "modelo"
+                    ]
+                },
+                "citaId": {
+                    "bsonType": "objectId"
+                },
+                "fechaRecepcion": {
+                    "bsonType": "date"
+                },
+                "fechaEstimadaEntrega": {
+                    "bsonType": "date"
+                },
+                "coordinadorId": {
+                    "bsonType": "objectId"
+                },
+                "tecnicosAsignados": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "objectId"
+                    }
+                },
+                "estado": {
+                    "bsonType": "string",
+                    "enum": [
+                        "recibida",
+                        "en_diagnostico",
+                        "pendiente_autorizacion",
+                        "en_ejecucion",
+                        "lista_entrega",
+                        "entregada",
+                        "cancelada"
+                    ]
+                },
+                "recepcion": {
+                    "bsonType": "object",
+                    "properties": {
+                        "problemaReportado": {
+                            "bsonType": "string"
+                        },
+                        "condicionesObservadas": {
+                            "bsonType": "string"
+                        },
+                        "accesorios": {
+                            "bsonType": "array",
+                            "additionalItems": true,
+                            "items": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "fotografias": {
+                            "bsonType": "array",
+                            "additionalItems": true,
+                            "items": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "nombreArchivo": {
+                                        "bsonType": "string"
+                                    },
+                                    "ubicacion": {
+                                        "bsonType": "string"
+                                    },
+                                    "descripcion": {
+                                        "bsonType": "string"
+                                    }
+                                },
+                                "additionalProperties": true,
+                                "required": [
+                                    "nombreArchivo",
+                                    "ubicacion"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "problemaReportado",
+                        "condicionesObservadas",
+                        "accesorios"
+                    ]
+                },
+                "diagnostico": {
+                    "bsonType": "object",
+                    "properties": {
+                        "hallazgos": {
+                            "bsonType": "array",
+                            "additionalItems": true,
+                            "items": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "tecnicoId": {
+                                        "bsonType": "objectId"
+                                    },
+                                    "componente": {
+                                        "bsonType": "string"
+                                    },
+                                    "condicion": {
+                                        "bsonType": "string"
+                                    },
+                                    "descripcion": {
+                                        "bsonType": "string"
+                                    },
+                                    "prioridad": {
+                                        "bsonType": "string",
+                                        "enum": [
+                                            "alta",
+                                            "media",
+                                            "baja"
+                                        ]
+                                    },
+                                    "observaciones": {
+                                        "bsonType": "string"
+                                    },
+                                    "accionesRecomendadas": {
+                                        "bsonType": "string"
+                                    },
+                                    "evidencias": {
+                                        "bsonType": "array",
+                                        "additionalItems": true,
+                                        "items": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "nombreArchivo": {
+                                                    "bsonType": "string"
+                                                },
+                                                "ubicacion": {
+                                                    "bsonType": "string"
+                                                },
+                                                "descripcion": {
+                                                    "bsonType": "string"
+                                                }
+                                            },
+                                            "additionalProperties": true,
+                                            "required": [
+                                                "nombreArchivo",
+                                                "ubicacion"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "additionalProperties": true,
+                                "required": [
+                                    "tecnicoId",
+                                    "componente",
+                                    "condicion",
+                                    "descripcion"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "hallazgos"
+                    ]
+                },
+                "entrega": {
+                    "bsonType": "object",
+                    "properties": {
+                        "fecha": {
+                            "bsonType": "date"
+                        },
+                        "confirmacionRecepcionCliente": {
+                            "bsonType": "bool"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "fecha",
+                        "confirmacionRecepcionCliente"
+                    ]
+                },
+                "valoracionServicio": {
+                    "bsonType": "object",
+                    "properties": {
+                        "calificacion": {
+                            "bsonType": "int",
+                            "maximum": 5,
+                            "minimum": 1
+                        },
+                        "comentarios": {
+                            "bsonType": "string"
+                        },
+                        "sugerencias": {
+                            "bsonType": "string"
+                        },
+                        "fecha": {
+                            "bsonType": "date"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "calificacion"
+                    ]
+                },
+                "historialEstados": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "estado": {
+                                "bsonType": "string",
+                                "enum": [
+                                    "recibida",
+                                    "en_diagnostico",
+                                    "pendiente_autorizacion",
+                                    "en_ejecucion",
+                                    "lista_entrega",
+                                    "entregada",
+                                    "cancelada"
+                                ]
+                            },
+                            "fecha": {
+                                "bsonType": "date"
+                            },
+                            "usuarioId": {
+                                "bsonType": "objectId"
+                            },
+                            "observacion": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "additionalProperties": true,
+                        "required": [
+                            "estado",
+                            "fecha",
+                            "usuarioId",
+                            "observacion"
+                        ]
+                    }
+                },
+                "revisionEntrega": {
+                    "bsonType": "object",
+                    "properties": {
+                        "fecha": {
+                            "bsonType": "date"
+                        },
+                        "puntosVerificados": {
+                            "bsonType": "array",
+                            "additionalItems": true,
+                            "items": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "punto": {
+                                        "bsonType": "string"
+                                    },
+                                    "resultado": {
+                                        "bsonType": "string",
+                                        "enum": [
+                                            "cumple",
+                                            "no_cumple"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true,
+                                "required": [
+                                    "punto",
+                                    "resultado"
+                                ]
+                            }
+                        },
+                        "aprobada": {
+                            "bsonType": "bool"
+                        },
+                        "recomendaciones": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "puntosVerificados",
+                        "aprobada"
+                    ]
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "clienteId",
+                "bicicleta",
+                "fechaRecepcion",
+                "fechaEstimadaEntrega",
+                "coordinadorId",
+                "tecnicosAsignados",
+                "estado"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.ordenesServicio.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+db.ordenesServicio.createIndex({
+    "bicicleta.bicicletaId": 1
+},
+{
+    "name": "uq_ordenes_bicicleta_activa",
+    "unique": true,
+    "partialFilterExpression": {
+        "estado": {
+            "$in": [
+                "recibida",
+                "en_diagnostico",
+                "pendiente_autorizacion",
+                "en_ejecucion",
+                "lista_entrega"
+            ]
+        }
+    }
+});
+
+
+
+
+db.createCollection("repuestos", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "repuestos",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "nombre": {
+                    "bsonType": "string"
+                },
+                "especificaciones": {
+                    "bsonType": "string"
+                },
+                "precio": {
+                    "bsonType": "int"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "nombre",
+                "especificaciones",
+                "precio"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.repuestos.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+
+
+
+db.createCollection("servicios", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "servicios",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "nombre": {
+                    "bsonType": "string"
+                },
+                "categoria": {
+                    "bsonType": "string",
+                    "enum": [
+                        "mantenimiento_preventivo",
+                        "frenos",
+                        "transmision",
+                        "ruedas",
+                        "suspension",
+                        "componentes_electricos"
+                    ]
+                },
+                "descripcion": {
+                    "bsonType": "string"
+                },
+                "duracionEstimada": {
+                    "bsonType": "number"
+                },
+                "precioReferencia": {
+                    "bsonType": "int"
+                },
+                "tareasHabituales": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "nombre": {
+                                "bsonType": "string"
+                            },
+                            "descripcion": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "additionalProperties": true,
+                        "required": [
+                            "nombre",
+                            "descripcion"
+                        ]
+                    }
+                },
+                "recomendacionesGenerales": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "nombre",
+                "categoria",
+                "descripcion",
+                "duracionEstimada",
+                "precioReferencia"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.servicios.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+
+
+
+db.createCollection("solicitudesGarantia", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "solicitudesGarantia",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "trabajoId": {
+                    "bsonType": "objectId"
+                },
+                "descripcion": {
+                    "bsonType": "string"
+                },
+                "fecha": {
+                    "bsonType": "date"
+                },
+                "evidencias": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "nombreArchivo": {
+                                "bsonType": "string"
+                            },
+                            "descripcion": {
+                                "bsonType": "string"
+                            },
+                            "ubicacion": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "additionalProperties": true,
+                        "required": [
+                            "nombreArchivo",
+                            "descripcion",
+                            "ubicacion"
+                        ]
+                    }
+                },
+                "estado": {
+                    "bsonType": "string",
+                    "enum": [
+                        "registrada",
+                        "en_revision",
+                        "resuelta"
+                    ]
+                },
+                "procede": {
+                    "bsonType": "bool"
+                },
+                "solucionAplicada": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "trabajoId",
+                "descripcion",
+                "fecha",
+                "evidencias",
+                "estado"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.solicitudesGarantia.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+
+
+
+db.createCollection("trabajosOrden", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "trabajosOrden",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "ordenId": {
+                    "bsonType": "objectId"
+                },
+                "tecnicoId": {
+                    "bsonType": "objectId"
+                },
+                "servicio": {
+                    "bsonType": "object",
+                    "properties": {
+                        "servicioId": {
+                            "bsonType": "objectId"
+                        },
+                        "nombre": {
+                            "bsonType": "string"
+                        },
+                        "descripcion": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "servicioId",
+                        "nombre"
+                    ]
+                },
+                "descripcionIntervencion": {
+                    "bsonType": "string"
+                },
+                "componente": {
+                    "bsonType": "string"
+                },
+                "manoObraEstimada": {
+                    "bsonType": "int"
+                },
+                "repuestosPrevistos": {
+                    "bsonType": "array",
+                    "additionalItems": true,
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "repuestoId": {
+                                "bsonType": "objectId"
+                            },
+                            "nombre": {
+                                "bsonType": "string"
+                            },
+                            "especificaciones": {
+                                "bsonType": "string"
+                            },
+                            "cantidad": {
+                                "bsonType": "int"
+                            },
+                            "precioUnitarioEstimado": {
+                                "bsonType": "int"
+                            }
+                        },
+                        "additionalProperties": true,
+                        "required": [
+                            "repuestoId",
+                            "nombre",
+                            "especificaciones",
+                            "cantidad",
+                            "precioUnitarioEstimado"
+                        ]
+                    }
+                },
+                "autorizacion": {
+                    "bsonType": "object",
+                    "properties": {
+                        "decision": {
+                            "bsonType": "string",
+                            "enum": [
+                                "autorizado",
+                                "rechazado"
+                            ]
+                        },
+                        "fecha": {
+                            "bsonType": "date"
+                        },
+                        "comentarios": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "decision",
+                        "fecha"
+                    ]
+                },
+                "ejecucion": {
+                    "bsonType": "object",
+                    "properties": {
+                        "fechaInicio": {
+                            "bsonType": "date"
+                        },
+                        "fechaFinalizacion": {
+                            "bsonType": "date"
+                        },
+                        "estado": {
+                            "bsonType": "string",
+                            "enum": [
+                                "en_curso",
+                                "finalizado"
+                            ]
+                        },
+                        "descripcionRealizada": {
+                            "bsonType": "string"
+                        },
+                        "repuestosUtilizados": {
+                            "bsonType": "array",
+                            "additionalItems": true,
+                            "items": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "repuestoId": {
+                                        "bsonType": "objectId"
+                                    },
+                                    "nombre": {
+                                        "bsonType": "string"
+                                    },
+                                    "cantidad": {
+                                        "bsonType": "int"
+                                    },
+                                    "precioUnitarioAplicado": {
+                                        "bsonType": "int"
+                                    }
+                                },
+                                "additionalProperties": true,
+                                "required": [
+                                    "repuestoId",
+                                    "nombre",
+                                    "cantidad",
+                                    "precioUnitarioAplicado"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "fechaInicio",
+                        "estado"
+                    ]
+                },
+                "garantia": {
+                    "bsonType": "object",
+                    "properties": {
+                        "duracion": {
+                            "bsonType": "int"
+                        },
+                        "fechaInicio": {
+                            "bsonType": "date"
+                        },
+                        "condiciones": {
+                            "bsonType": "string"
+                        },
+                        "exclusiones": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "duracion",
+                        "fechaInicio",
+                        "condiciones",
+                        "exclusiones"
+                    ]
+                },
+                "observaciones": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "ordenId",
+                "tecnicoId"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.trabajosOrden.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+
+
+
+db.createCollection("usuarios", {
+    "capped": false,
+    "validator": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "title": "usuarios",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "nombreCompleto": {
+                    "bsonType": "string"
+                },
+                "documento": {
+                    "bsonType": "string"
+                },
+                "correo": {
+                    "bsonType": "string"
+                },
+                "telefono": {
+                    "bsonType": "string"
+                },
+                "rol": {
+                    "bsonType": "string",
+                    "enum": [
+                        "cliente",
+                        "tecnico",
+                        "coordinador"
+                    ]
+                },
+                "direccion": {
+                    "bsonType": "string"
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "_id",
+                "nombreCompleto",
+                "documento",
+                "correo",
+                "telefono",
+                "rol"
+            ]
+        }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "error"
+});
+
+db.usuarios.createIndex({
+    "_id": 1
+},
+{
+    "name": "_id_"
+});
+
+db.usuarios.createIndex({
+    "documento": 1
+},
+{
+    "name": "uq_usuarios_documento",
+    "unique": true
+});
+
+db.usuarios.createIndex({
+    "correo": 1
+},
+{
+    "name": "uq_usuarios_correo",
+    "unique": true
+});
