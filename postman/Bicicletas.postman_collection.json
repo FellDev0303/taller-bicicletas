@@ -1,0 +1,2576 @@
+{
+  "info": {
+    "_postman_id": "58b7222e-d0ea-4df1-afc4-a93b99521ab3",
+    "name": "Bicicletas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58664473"
+  },
+  "item": [
+    {
+      "name": "Crear bicicleta electrica",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Specialized\",\r\n  \"modelo\": \"Turbo Vado\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"SN-12345\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"bateria\": { \r\n        \"capacidadWh\": 604.0,\r\n        \"voltajeV\": 36.0 },\r\n    \"motor\": { \r\n        \"tipo\": \"central\", \r\n        \"potenciaW\": 250 \r\n    }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/bicicletas/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta electrica",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Specialized\",\r\n  \"modelo\": \"Turbo Vado\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"SN-12345\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"bateria\": { \r\n        \"capacidadWh\": 604.0,\r\n        \"voltajeV\": 36.0 },\r\n    \"motor\": { \r\n        \"tipo\": \"central\", \r\n        \"potenciaW\": 250 \r\n    }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/bicicletas/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:32:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c1f896da86b910fc8eac\",\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n  \"marca\": \"Specialized\",\n  \"modelo\": \"Turbo Vado\",\n  \"tipo\": \"electrica\",\n  \"color\": \"negro\",\n  \"numeroSerie\": \"SN-12345\",\n  \"caracteristicas\": {\n    \"tamanoMarco\": \"M\",\n    \"material\": \"aluminio\",\n    \"tamanoRueda\": \"28\",\n    \"tipoFrenos\": \"disco hidráulico\",\n    \"transmision\": \"1x11\",\n    \"suspension\": null,\n    \"bateria\": {\n      \"capacidadWh\": 604,\n      \"voltajeV\": 36\n    },\n    \"motor\": {\n      \"tipo\": \"central\",\n      \"potenciaW\": 250\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear Usuario para diferentes pruebas de bicicleta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombreCompleto\": \"Pepito Juan\",\r\n    \"documento\": \"1892799012\",\r\n    \"correo\": \"pepitojuan@example.com\",\r\n    \"telefono\": \"3362105692\",\r\n    \"rol\":\"cliente\",\r\n    \"direccion\":\"Carrera 23 #1-114\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear Usuario para diferentes pruebas de bicicleta",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombreCompleto\": \"Pepito Juan\",\r\n    \"documento\": \"1892799012\",\r\n    \"correo\": \"pepitojuan@example.com\",\r\n    \"telefono\": \"3362105692\",\r\n    \"rol\":\"cliente\",\r\n    \"direccion\":\"Carrera 23 #1-114\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:33:22 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c21296da86b910fc8ead\",\n  \"nombreCompleto\": \"Pepito Juan\",\n  \"documento\": \"1892799012\",\n  \"correo\": \"pepitojuan@example.com\",\n  \"telefono\": \"3362105692\",\n  \"rol\": \"cliente\",\n  \"direccion\": \"Carrera 23 #1-114\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta montana",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"propietarioId\": \"6b03c21296da86b910fc8ead\",\r\n    \"marca\": \"Rigo bikes\",\r\n    \"modelo\": \"Manzana\",\r\n    \"tipo\":\"montana\",\r\n    \"color\": \"rosado\",\r\n    \"numeroSerie\": \"TRK-MR7-22014\",\r\n    \"caracteristicas\": {\r\n        \"tamanoMarco\": \"L\",\r\n        \"material\": \"titanio\",\r\n        \"tamanoRueda\": \"29\",\r\n        \"tipoFrenos\": \"disco hidráulico\",\r\n        \"transmision\": \"1x12\",\r\n        \"suspension\":{\r\n            \"informacion\":\"Horquilla RockShox Judy 100 mm\",\r\n            \"recorrido\":\"100\"\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta montana",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"propietarioId\": \"6b03c21296da86b910fc8ead\",\r\n    \"marca\": \"Rigo bikes\",\r\n    \"modelo\": \"Manzana\",\r\n    \"tipo\":\"montana\",\r\n    \"color\": \"rosado\",\r\n    \"numeroSerie\": \"TRK-MR7-22014\",\r\n    \"caracteristicas\": {\r\n        \"tamanoMarco\": \"L\",\r\n        \"material\": \"titanio\",\r\n        \"tamanoRueda\": \"29\",\r\n        \"tipoFrenos\": \"disco hidráulico\",\r\n        \"transmision\": \"1x12\",\r\n        \"suspension\":{\r\n            \"informacion\":\"Horquilla RockShox Judy 100 mm\",\r\n            \"recorrido\":\"100\"\r\n        }\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:34:03 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c23b96da86b910fc8eae\",\n  \"propietarioId\": \"6b03c21296da86b910fc8ead\",\n  \"marca\": \"Rigo bikes\",\n  \"modelo\": \"Manzana\",\n  \"tipo\": \"montana\",\n  \"color\": \"rosado\",\n  \"numeroSerie\": \"TRK-MR7-22014\",\n  \"caracteristicas\": {\n    \"tamanoMarco\": \"L\",\n    \"material\": \"titanio\",\n    \"tamanoRueda\": \"29\",\n    \"tipoFrenos\": \"disco hidráulico\",\n    \"transmision\": \"1x12\",\n    \"suspension\": {\n      \"informacion\": \"Horquilla RockShox Judy 100 mm\",\n      \"recorrido\": 100\n    },\n    \"bateria\": null,\n    \"motor\": null\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta urbana",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Giant\",\r\n  \"modelo\": \"Escape 3\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"azul\",\r\n  \"numeroSerie\": \"GNT-ES3-04571\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"acero\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"3x7\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta urbana",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Giant\",\r\n  \"modelo\": \"Escape 3\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"azul\",\r\n  \"numeroSerie\": \"GNT-ES3-04571\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"acero\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"3x7\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:34:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c24d96da86b910fc8eaf\",\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n  \"marca\": \"Giant\",\n  \"modelo\": \"Escape 3\",\n  \"tipo\": \"urbana\",\n  \"color\": \"azul\",\n  \"numeroSerie\": \"GNT-ES3-04571\",\n  \"caracteristicas\": {\n    \"tamanoMarco\": \"M\",\n    \"material\": \"acero\",\n    \"tamanoRueda\": \"700c\",\n    \"tipoFrenos\": \"V-brake\",\n    \"transmision\": \"3x7\",\n    \"suspension\": null,\n    \"bateria\": null,\n    \"motor\": null\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta ruta sin numeroSerie ni transmision",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"marca\": \"Scott\",\r\n  \"modelo\": \"Speedster 20\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"blanco\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"54 cm\",\r\n    \"material\": \"carbono\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta ruta sin numeroSerie ni transmision",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"marca\": \"Scott\",\r\n  \"modelo\": \"Speedster 20\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"blanco\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"54 cm\",\r\n    \"material\": \"carbono\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:34:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c26196da86b910fc8eb0\",\n  \"propietarioId\": \"6b03c21296da86b910fc8ead\",\n  \"marca\": \"Scott\",\n  \"modelo\": \"Speedster 20\",\n  \"tipo\": \"ruta\",\n  \"color\": \"blanco\",\n  \"numeroSerie\": null,\n  \"caracteristicas\": {\n    \"tamanoMarco\": \"54 cm\",\n    \"material\": \"carbono\",\n    \"tamanoRueda\": \"700c\",\n    \"tipoFrenos\": \"disco mecánico\",\n    \"transmision\": null,\n    \"suspension\": null,\n    \"bateria\": null,\n    \"motor\": null\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin propietarioId",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"marca\": \"Orbea\",\r\n  \"modelo\": \"Alma H30\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"verde\",\r\n  \"numeroSerie\": \"ORB-AH30-11803\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"suspension\": { \"informacion\": \"Horquilla SR Suntour XCT 100 mm\", \"recorrido\": 100 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin propietarioId",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"marca\": \"Orbea\",\r\n  \"modelo\": \"Alma H30\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"verde\",\r\n  \"numeroSerie\": \"ORB-AH30-11803\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"suspension\": { \"informacion\": \"Horquilla SR Suntour XCT 100 mm\", \"recorrido\": 100 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:34:57 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:34:57.761557500\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"propietarioId: El propietario es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con propietarioId invalido (hola)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"hola\",\r\n  \"marca\": \"Merida\",\r\n  \"modelo\": \"Crossway 20\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"gris\",\r\n  \"numeroSerie\": \"MRD-CW20-33207\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"2x8\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con propietarioId invalido (hola)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"hola\",\r\n  \"marca\": \"Merida\",\r\n  \"modelo\": \"Crossway 20\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"gris\",\r\n  \"numeroSerie\": \"MRD-CW20-33207\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"2x8\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:35:07 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:35:07.047998600\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"propietarioId: El propietario debe ser un identificador válido\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con propietarioId vacio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"\",\r\n  \"marca\": \"Cannondale\",\r\n  \"modelo\": \"Synapse Carbon\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"rojo\",\r\n  \"numeroSerie\": \"CND-SYN-77451\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"56 cm\",\r\n    \"material\": \"carbono\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"2x11\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con propietarioId vacio",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"\",\r\n  \"marca\": \"Cannondale\",\r\n  \"modelo\": \"Synapse Carbon\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"rojo\",\r\n  \"numeroSerie\": \"CND-SYN-77451\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"56 cm\",\r\n    \"material\": \"carbono\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"2x11\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:35:18 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:35:18.076488500\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"propietarioId: El propietario debe ser un identificador válido\",\n    \"propietarioId: El propietario es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin marca",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"modelo\": \"Aspect 950\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"naranja\",\r\n  \"numeroSerie\": \"ASP-950-55213\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"S\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x8\",\r\n    \"suspension\": { \"informacion\": \"Horquilla RockShox 30 Silver 100 mm\", \"recorrido\": 100 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin marca",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"modelo\": \"Aspect 950\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"naranja\",\r\n  \"numeroSerie\": \"ASP-950-55213\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"S\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x8\",\r\n    \"suspension\": { \"informacion\": \"Horquilla RockShox 30 Silver 100 mm\", \"recorrido\": 100 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:35:32 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:35:32.416633\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"marca: La marca es obligatoria\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin modelo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Haibike\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"blanco\",\r\n  \"numeroSerie\": \"HBK-TRK-90821\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 500.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"trasero\", \"potenciaW\": 250 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin modelo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Haibike\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"blanco\",\r\n  \"numeroSerie\": \"HBK-TRK-90821\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 500.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"trasero\", \"potenciaW\": 250 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:35:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:35:45.303961600\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"modelo: El modelo es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin color",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cube\",\r\n  \"modelo\": \"Nature\",\r\n  \"tipo\": \"urbana\",\r\n  \"numeroSerie\": \"CUB-NAT-61034\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"S\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"1x8\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin color",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cube\",\r\n  \"modelo\": \"Nature\",\r\n  \"tipo\": \"urbana\",\r\n  \"numeroSerie\": \"CUB-NAT-61034\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"S\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"1x8\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:36:02 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:36:02.954514300\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"color: El color es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin tipo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Bianchi\",\r\n  \"modelo\": \"Via Nirone\",\r\n  \"color\": \"celeste\",\r\n  \"numeroSerie\": \"BNC-VN-20987\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"52 cm\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"caliper\",\r\n    \"transmision\": \"2x10\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin tipo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Bianchi\",\r\n  \"modelo\": \"Via Nirone\",\r\n  \"color\": \"celeste\",\r\n  \"numeroSerie\": \"BNC-VN-20987\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"52 cm\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"caliper\",\r\n    \"transmision\": \"2x10\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:36:20 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:36:20.193881\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"tipo: El tipo es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con marca solo con espacios",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"   \",\r\n  \"modelo\": \"Domane AL 2\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"azul oscuro\",\r\n  \"numeroSerie\": \"DMN-AL2-48120\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"58 cm\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"2x8\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con marca solo con espacios",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"   \",\r\n  \"modelo\": \"Domane AL 2\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"azul oscuro\",\r\n  \"numeroSerie\": \"DMN-AL2-48120\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"58 cm\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"2x8\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:36:38 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:36:38.114834900\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"marca: La marca es obligatoria\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con diferente tipo a los permitidos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Xiaomi\",\r\n  \"modelo\": \"Mi Electric Scooter 3\",\r\n  \"tipo\": \"patineta\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"XMI-S3-70555\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"unico\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"8.5\",\r\n    \"tipoFrenos\": \"tambor\",\r\n    \"bateria\": { \"capacidadWh\": 275.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"trasero\", \"potenciaW\": 300 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con diferente tipo a los permitidos",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Xiaomi\",\r\n  \"modelo\": \"Mi Electric Scooter 3\",\r\n  \"tipo\": \"patineta\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"XMI-S3-70555\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"unico\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"8.5\",\r\n    \"tipoFrenos\": \"tambor\",\r\n    \"bateria\": { \"capacidadWh\": 275.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"trasero\", \"potenciaW\": 300 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:30:59 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:30:59.839693900\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"tipo: El tipo debe ser urbana, ruta, montana o electrica\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin caracteristicas",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Raleigh\",\r\n  \"modelo\": \"Classic\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"beige\",\r\n  \"numeroSerie\": \"RLG-CL-84402\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin caracteristicas",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Raleigh\",\r\n  \"modelo\": \"Classic\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"beige\",\r\n  \"numeroSerie\": \"RLG-CL-84402\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:38:43 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:38:43.052631900\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas: Las características son obligatorias\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con caracteristicas vacio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"BMC\",\r\n  \"modelo\": \"Roadmachine\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"negro mate\",\r\n  \"numeroSerie\": \"BMC-RM-15309\",\r\n  \"caracteristicas\": {\r\n    \r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con caracteristicas vacio",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"BMC\",\r\n  \"modelo\": \"Roadmachine\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"negro mate\",\r\n  \"numeroSerie\": \"BMC-RM-15309\",\r\n  \"caracteristicas\": {\r\n    \r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:40:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:40:45.321867600\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.tamanoMarco: El tamaño del marco es obligatorio\",\n    \"caracteristicas.tamanoRueda: El tamaño de rueda es obligatorio\",\n    \"caracteristicas.tipoFrenos: El tipo de frenos es obligatorio\",\n    \"caracteristicas.material: El material es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin tamanoMarco",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Venzo\",\r\n  \"modelo\": \"Thorn\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"amarillo\",\r\n  \"numeroSerie\": \"VNZ-TH-90214\",\r\n  \"caracteristicas\": {\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla Suntour XCM 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin tamanoMarco",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Venzo\",\r\n  \"modelo\": \"Thorn\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"amarillo\",\r\n  \"numeroSerie\": \"VNZ-TH-90214\",\r\n  \"caracteristicas\": {\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla Suntour XCM 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:41:58 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:41:58.789011200\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.tamanoMarco: El tamaño del marco es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin material",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Felt\",\r\n  \"modelo\": \"FR30\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"FLT-FR30-66731\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"54 cm\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"caliper\",\r\n    \"transmision\": \"2x9\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin material",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Felt\",\r\n  \"modelo\": \"FR30\",\r\n  \"tipo\": \"ruta\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"FLT-FR30-66731\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"54 cm\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"tipoFrenos\": \"caliper\",\r\n    \"transmision\": \"2x9\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:43:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:43:11.640805400\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.material: El material es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin tamanoRueda",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Lapierre\",\r\n  \"modelo\": \"Overvolt Trekking 4.4\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"verde\",\r\n  \"numeroSerie\": \"LPR-OV44-52390\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"bateria\": { \"capacidadWh\": 500.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin tamanoRueda",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Lapierre\",\r\n  \"modelo\": \"Overvolt Trekking 4.4\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"verde\",\r\n  \"numeroSerie\": \"LPR-OV44-52390\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"bateria\": { \"capacidadWh\": 500.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:45:10 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:45:10.546593200\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.tamanoRueda: El tamaño de rueda es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta sin tipoFrenos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Schwinn\",\r\n  \"modelo\": \"Searcher 3\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"morado\",\r\n  \"numeroSerie\": \"SCH-SR3-40718\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"acero\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"transmision\": \"7 velocidades\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta sin tipoFrenos",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Schwinn\",\r\n  \"modelo\": \"Searcher 3\",\r\n  \"tipo\": \"urbana\",\r\n  \"color\": \"morado\",\r\n  \"numeroSerie\": \"SCH-SR3-40718\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"acero\",\r\n    \"tamanoRueda\": \"700c\",\r\n    \"transmision\": \"7 velocidades\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:46:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:46:45.156750500\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.tipoFrenos: El tipo de frenos es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta montana con suspension vacia",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Norco\",\r\n  \"modelo\": \"Storm 3\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"azul\",\r\n  \"numeroSerie\": \"NRC-ST3-27655\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"XL\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"suspension\": {}\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta montana con suspension vacia",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Norco\",\r\n  \"modelo\": \"Storm 3\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"azul\",\r\n  \"numeroSerie\": \"NRC-ST3-27655\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"XL\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x11\",\r\n    \"suspension\": {}\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:49:23 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:49:23.202203900\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.suspension.informacion: La información de la suspensión es obligatoria\",\n    \"caracteristicas.suspension.recorrido: El recorrido de la suspensión es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta electrica con bateria sin voltajeV",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Moustache\",\r\n  \"modelo\": \"Friday 28\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"rojo\",\r\n  \"numeroSerie\": \"MST-FR28-93140\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 625.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta electrica con bateria sin voltajeV",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Moustache\",\r\n  \"modelo\": \"Friday 28\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"rojo\",\r\n  \"numeroSerie\": \"MST-FR28-93140\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 625.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:50:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:50:45.654706\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.bateria.voltajeV: El voltaje de la batería es obligatorio\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta electrica con motor sin potenciaW",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Rockrider\",\r\n  \"modelo\": \"E-ST 500\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"RKR-E500-18827\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"bateria\": { \"capacidadWh\": 504.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\" }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta electrica con motor sin potenciaW",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Rockrider\",\r\n  \"modelo\": \"E-ST 500\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"RKR-E500-18827\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"bateria\": { \"capacidadWh\": 504.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\" }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 04:55:01 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-22T23:55:01.255847500\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"caracteristicas.motor.potenciaW: La potencia del motor es obligatoria\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con rol tecnico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"marca\": \"GW\",\r\n  \"modelo\": \"Shark\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"GW-SHK-44891\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla de resorte 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con rol tecnico",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"marca\": \"GW\",\r\n  \"modelo\": \"Shark\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"GW-SHK-44891\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla de resorte 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:00:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T00:00:45.841607800\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"El propietario debe ser un usuario con rol cliente\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con propietarioId inexistente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"000000000000000000000000\",\r\n  \"marca\": \"Trek\",\r\n  \"modelo\": \"Powerfly 5\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"azul marino\",\r\n  \"numeroSerie\": \"TRK-PF5-72056\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 625.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con propietarioId inexistente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"000000000000000000000000\",\r\n  \"marca\": \"Trek\",\r\n  \"modelo\": \"Powerfly 5\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"azul marino\",\r\n  \"numeroSerie\": \"TRK-PF5-72056\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\",\r\n    \"bateria\": { \"capacidadWh\": 625.0, \"voltajeV\": 36.0 },\r\n    \"motor\": { \"tipo\": \"central\", \"potenciaW\": 250 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:02:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T00:02:11.473551\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"El propietario no existe\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta con rol coordinador",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"marca\": \"GW\",\r\n  \"modelo\": \"Shark\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"GW-SHK-44891\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla de resorte 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta con rol coordinador",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"marca\": \"GW\",\r\n  \"modelo\": \"Shark\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"negro\",\r\n  \"numeroSerie\": \"GW-SHK-44891\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"27.5\",\r\n    \"tipoFrenos\": \"disco mecánico\",\r\n    \"transmision\": \"3x7\",\r\n    \"suspension\": { \"informacion\": \"Horquilla de resorte 80 mm\", \"recorrido\": 80 }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:03:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T00:03:36.239178\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"El propietario debe ser un usuario con rol cliente\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta montana sin suspension",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Kona\",\r\n  \"modelo\": \"Fire Mountain\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"morado\",\r\n  \"numeroSerie\": \"KON-FM-35162\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"cromoly\",\r\n    \"tamanoRueda\": \"26\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"1x8\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta montana sin suspension",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Kona\",\r\n  \"modelo\": \"Fire Mountain\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"morado\",\r\n  \"numeroSerie\": \"KON-FM-35162\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"M\",\r\n    \"material\": \"cromoly\",\r\n    \"tamanoRueda\": \"26\",\r\n    \"tipoFrenos\": \"V-brake\",\r\n    \"transmision\": \"1x8\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:04:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T00:04:48.965883200\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Una bicicleta de montaña requiere suspension\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear bicicleta electrica sin bateria ni motor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cube\",\r\n  \"modelo\": \"Kathmandu Hybrid One\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"gris\",\r\n  \"numeroSerie\": \"CUB-KHO-60213\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"XL\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Crear bicicleta electrica sin bateria ni motor",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cube\",\r\n  \"modelo\": \"Kathmandu Hybrid One\",\r\n  \"tipo\": \"electrica\",\r\n  \"color\": \"gris\",\r\n  \"numeroSerie\": \"CUB-KHO-60213\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"XL\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"28\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x10\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:06:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T00:06:44.122790\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Una bicicleta eléctrica requiere bateria y motor\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "crear bicicleta de montana con recorrido en letras",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cannondale\",\r\n  \"modelo\": \"Trail 5\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"verde lima\",\r\n  \"numeroSerie\": \"CND-TR5-56023\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"suspension\": { \"informacion\": \"Horquilla SR Suntour XCT 100 mm\", \"recorrido\": \"abc\" }\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "crear bicicleta de montana con recorrido en letras",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"marca\": \"Cannondale\",\r\n  \"modelo\": \"Trail 5\",\r\n  \"tipo\": \"montana\",\r\n  \"color\": \"verde lima\",\r\n  \"numeroSerie\": \"CND-TR5-56023\",\r\n  \"caracteristicas\": {\r\n    \"tamanoMarco\": \"L\",\r\n    \"material\": \"aluminio\",\r\n    \"tamanoRueda\": \"29\",\r\n    \"tipoFrenos\": \"disco hidráulico\",\r\n    \"transmision\": \"1x9\",\r\n    \"suspension\": { \"informacion\": \"Horquilla SR Suntour XCT 100 mm\", \"recorrido\": \"abc\" }\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:11:12 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"timestamp\": \"2026-11-23T05:11:12.590Z\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"path\": \"/UAO/apirest/bicicletas/\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Consultar todas las bicicletas creadas exitosamente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar todas las bicicletas creadas exitosamente",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:16:22 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": \"6b03c1f896da86b910fc8eac\",\n    \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n    \"marca\": \"Specialized\",\n    \"modelo\": \"Turbo Vado\",\n    \"tipo\": \"electrica\",\n    \"color\": \"negro\",\n    \"numeroSerie\": \"SN-12345\",\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"M\",\n      \"material\": \"aluminio\",\n      \"tamanoRueda\": \"28\",\n      \"tipoFrenos\": \"disco hidráulico\",\n      \"transmision\": \"1x11\",\n      \"suspension\": null,\n      \"bateria\": {\n        \"capacidadWh\": 604,\n        \"voltajeV\": 36\n      },\n      \"motor\": {\n        \"tipo\": \"central\",\n        \"potenciaW\": 250\n      }\n    }\n  },\n  {\n    \"id\": \"6b03c23b96da86b910fc8eae\",\n    \"propietarioId\": \"6b03c21296da86b910fc8ead\",\n    \"marca\": \"Rigo bikes\",\n    \"modelo\": \"Manzana\",\n    \"tipo\": \"montana\",\n    \"color\": \"rosado\",\n    \"numeroSerie\": \"TRK-MR7-22014\",\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"L\",\n      \"material\": \"titanio\",\n      \"tamanoRueda\": \"29\",\n      \"tipoFrenos\": \"disco hidráulico\",\n      \"transmision\": \"1x12\",\n      \"suspension\": {\n        \"informacion\": \"Horquilla RockShox Judy 100 mm\",\n        \"recorrido\": 100\n      },\n      \"bateria\": null,\n      \"motor\": null\n    }\n  },\n  {\n    \"id\": \"6b03c24d96da86b910fc8eaf\",\n    \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n    \"marca\": \"Giant\",\n    \"modelo\": \"Escape 3\",\n    \"tipo\": \"urbana\",\n    \"color\": \"azul\",\n    \"numeroSerie\": \"GNT-ES3-04571\",\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"M\",\n      \"material\": \"acero\",\n      \"tamanoRueda\": \"700c\",\n      \"tipoFrenos\": \"V-brake\",\n      \"transmision\": \"3x7\",\n      \"suspension\": null,\n      \"bateria\": null,\n      \"motor\": null\n    }\n  },\n  {\n    \"id\": \"6b03c26196da86b910fc8eb0\",\n    \"propietarioId\": \"6b03c21296da86b910fc8ead\",\n    \"marca\": \"Scott\",\n    \"modelo\": \"Speedster 20\",\n    \"tipo\": \"ruta\",\n    \"color\": \"blanco\",\n    \"numeroSerie\": null,\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"54 cm\",\n      \"material\": \"carbono\",\n      \"tamanoRueda\": \"700c\",\n      \"tipoFrenos\": \"disco mecánico\",\n      \"transmision\": null,\n      \"suspension\": null,\n      \"bateria\": null,\n      \"motor\": null\n    }\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consultar bicicletas de Ana por su propietarioId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/?propietarioId=6b03a6a061db348cba15bdce",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            ""
+          ],
+          "query": [
+            {
+              "key": "propietarioId",
+              "value": "6b03a6a061db348cba15bdce"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar bicicletas de Ana por su propietarioId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/?propietarioId=6b03a6a061db348cba15bdce",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "propietarioId",
+                  "value": "6b03a6a061db348cba15bdce"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:21:10 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": \"6b03c1f896da86b910fc8eac\",\n    \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n    \"marca\": \"Specialized\",\n    \"modelo\": \"Turbo Vado\",\n    \"tipo\": \"electrica\",\n    \"color\": \"negro\",\n    \"numeroSerie\": \"SN-12345\",\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"M\",\n      \"material\": \"aluminio\",\n      \"tamanoRueda\": \"28\",\n      \"tipoFrenos\": \"disco hidráulico\",\n      \"transmision\": \"1x11\",\n      \"suspension\": null,\n      \"bateria\": {\n        \"capacidadWh\": 604,\n        \"voltajeV\": 36\n      },\n      \"motor\": {\n        \"tipo\": \"central\",\n        \"potenciaW\": 250\n      }\n    }\n  },\n  {\n    \"id\": \"6b03c24d96da86b910fc8eaf\",\n    \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n    \"marca\": \"Giant\",\n    \"modelo\": \"Escape 3\",\n    \"tipo\": \"urbana\",\n    \"color\": \"azul\",\n    \"numeroSerie\": \"GNT-ES3-04571\",\n    \"caracteristicas\": {\n      \"tamanoMarco\": \"M\",\n      \"material\": \"acero\",\n      \"tamanoRueda\": \"700c\",\n      \"tipoFrenos\": \"V-brake\",\n      \"transmision\": \"3x7\",\n      \"suspension\": null,\n      \"bateria\": null,\n      \"motor\": null\n    }\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consultar bicicleta por su id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/6b03c1f896da86b910fc8eac",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "bicicletas",
+            "6b03c1f896da86b910fc8eac"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar bicicleta por su id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/bicicletas/6b03c1f896da86b910fc8eac",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "bicicletas",
+                "6b03c1f896da86b910fc8eac"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 05:26:48 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b03c1f896da86b910fc8eac\",\n  \"propietarioId\": \"6b03a6a061db348cba15bdce\",\n  \"marca\": \"Specialized\",\n  \"modelo\": \"Turbo Vado\",\n  \"tipo\": \"electrica\",\n  \"color\": \"negro\",\n  \"numeroSerie\": \"SN-12345\",\n  \"caracteristicas\": {\n    \"tamanoMarco\": \"M\",\n    \"material\": \"aluminio\",\n    \"tamanoRueda\": \"28\",\n    \"tipoFrenos\": \"disco hidráulico\",\n    \"transmision\": \"1x11\",\n    \"suspension\": null,\n    \"bateria\": {\n      \"capacidadWh\": 604,\n      \"voltajeV\": 36\n    },\n    \"motor\": {\n      \"tipo\": \"central\",\n      \"potenciaW\": 250\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
