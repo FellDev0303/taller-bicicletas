@@ -376,7 +376,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"estado\": \"pendiente_autorizacion\",\r\n  \"usuarioId\": \"ID_TECNICO\",\r\n  \"observacion\": \"Intento finalizar diagnóstico sin registrar hallazgos\"\r\n}",
+          "raw": "{\r\n  \"estado\": \"pendiente_autorizacion\",\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"observacion\": \"Intento finalizar diagnóstico sin registrar hallazgos\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -484,10 +484,27 @@
     {
       "name": "Cambiar estado de la orden con un usuario que no es coordinador ni técnico asignado",
       "request": {
-        "method": "GET",
+        "method": "PUT",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"cancelada\",\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"observacion\": \"Intento de cambio de estado por el cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "estado"
+          ]
         }
       },
       "response": []
