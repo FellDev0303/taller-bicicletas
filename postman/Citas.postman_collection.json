@@ -1,0 +1,658 @@
+{
+  "info": {
+    "_postman_id": "bd7a8875-80ae-46a6-b663-44d246fcc636",
+    "name": "Citas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-bd7a8875-80ae-46a6-b663-44d246fcc636?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Creacion otro cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombreCompleto\": \"Pedro Ríos\",\r\n  \"documento\": \"1088000222\",\r\n  \"correo\": \"pedro.rios@example.com\",\r\n  \"telefono\": \"3168002233\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Carrera 15 # 8-40\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/usuarios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Creacion Coordinador",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombreCompleto\": \"Marta Gómez\",\r\n  \"documento\": \"1088000111\",\r\n  \"correo\": \"marta.gomez@example.com\",\r\n  \"telefono\": \"3157001122\",\r\n  \"rol\": \"coordinador\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/usuarios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita valida",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-10T10:00:00\",\r\n  \"motivo\": \"Mantenimiento preventivo\",\r\n  \"problemasObservados\": \"Los frenos hacen ruido al frenar\",\r\n  \"serviciosInteres\": [\"6b03b41f61db348cba15bdd0\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita válida (sin servicios ni problemas observados)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-11T09:00:00\",\r\n  \"motivo\": \"Revisión general\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar citas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtrar citas por cliente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/?clienteId=6b03a6a061db348cba15bdce",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "6b03a6a061db348cba15bdce"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtrar citas por estado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/?estado=solicitada",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ],
+          "query": [
+            {
+              "key": "estado",
+              "value": "solicitada"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar cita por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b040661d9c9024c3ff7452e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar citas sin motivo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"ID_CLIENTE\",\r\n  \"bicicletaId\": \"ID_BICICLETA\",\r\n  \"fechaHora\": \"2026-12-15T10:00:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita con fecha pasada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"ID_CLIENTE\",\r\n  \"bicicletaId\": \"ID_BICICLETA\",\r\n  \"fechaHora\": \"2025-01-10T10:00:00\",\r\n  \"motivo\": \"Mantenimiento preventivo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita con usuario que no es cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b0404b6d9c9024c3ff7452d\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-15T10:00:00\",\r\n  \"motivo\": \"Mantenimiento preventivo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita con una bicicleta de otro cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b040470d9c9024c3ff7452c\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-15T10:00:00\",\r\n  \"motivo\": \"Mantenimiento preventivo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita con un servicio inexistente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-15T10:00:00\",\r\n  \"motivo\": \"Mantenimiento preventivo\",\r\n  \"serviciosInteres\": [\"000000000000000000000000\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita en un horario ya ocupado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-10T10:00:00\",\r\n  \"motivo\": \"Otra revisión\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar cita con id invalido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/abc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar cita que no existe",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/citas/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirmar cita",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"coordinadorId\": \"6b0404b6d9c9024c3ff7452d\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/confirmar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b040661d9c9024c3ff7452e",
+            "confirmar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirmar una cita ya confirmada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"coordinadorId\": \"6b0404b6d9c9024c3ff7452d\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/confirmar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b040661d9c9024c3ff7452e",
+            "confirmar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Confirmar cita con usuario que no es coordinador",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"coordinadorId\": \"6b03a6a061db348cba15bdce\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/confirmar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b04070cd9c9024c3ff7452f",
+            "confirmar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reprogramar cita",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"coordinadorId\": \"6b0404b6d9c9024c3ff7452d\",\r\n  \"nuevaFechaHora\": \"2026-12-12T15:00:00\",\r\n  \"observacion\": \"Se mueve la cita por disponibilidad del taller\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/reprogramar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b040661d9c9024c3ff7452e",
+            "reprogramar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reprogramar cita a un horario ocupado",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"coordinadorId\": \"6b0404b6d9c9024c3ff7452d\",\r\n  \"nuevaFechaHora\": \"2026-12-12T15:00:00\",\r\n  \"observacion\": \"Se intenta mover al horario de la otra cita\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/reprogramar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b04070cd9c9024c3ff7452f",
+            "reprogramar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancelar cita",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"observacion\": \"El cliente no puede asistir\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/cancelar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b04070cd9c9024c3ff7452f",
+            "cancelar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancelar cita que ya fue cancelada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"observacion\": \"Segundo intento de cancelación\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/cancelar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b04070cd9c9024c3ff7452f",
+            "cancelar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancelar cita con usuario ajeno",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b040470d9c9024c3ff7452c\",\r\n  \"observacion\": \"Intento de cancelación por otro cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/cancelar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            "6b040661d9c9024c3ff7452e",
+            "cancelar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Solicitar cita en un horario liberado por una cancelacion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"fechaHora\": \"2026-12-11T09:00:00\",\r\n  \"motivo\": \"Revisión general\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/citas/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "citas",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
