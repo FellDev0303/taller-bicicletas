@@ -1,0 +1,502 @@
+{
+  "info": {
+    "_postman_id": "dc48aa68-bb76-46ae-a14e-12613a22ce9b",
+    "name": "Ordenes de servicio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-dc48aa68-bb76-46ae-a14e-12613a22ce9b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear orden de servicio sin cita previa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c1f896da86b910fc8eac\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b03b55361db348cba15bdd1\"],\r\n  \"fechaEstimadaEntrega\": \"2026-12-20T17:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Falla intermitente en la asistencia del motor eléctrico\",\r\n    \"condicionesObservadas\": \"Marco con rayones leves en vaina derecha, batería al 80%\",\r\n    \"accesorios\": [\"Cargador original\", \"Llave de batería\", \"Luz delantera\"],\r\n    \"fotografias\": [\r\n      {\r\n        \"nombreArchivo\": \"ingreso_lateral.jpg\",\r\n        \"ubicacion\": \"/uploads/ordenes/2026/11/ingreso_lateral.jpg\",\r\n        \"descripcion\": \"Estado general al ingreso\"\r\n      }\r\n    ]\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear orden de servicio vinculada a una cita confirmada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c24d96da86b910fc8eaf\",\r\n  \"citaId\": \"6b040661d9c9024c3ff7452e\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b03b55361db348cba15bdd1\"],\r\n  \"fechaEstimadaEntrega\": \"2026-12-18T16:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Los frenos hacen ruido al frenar\",\r\n    \"condicionesObservadas\": \"Zapatas desgastadas y guaya trasera destensada\",\r\n    \"accesorios\": [\"Caramañola\"]\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear segunda orden activa para la misma bicicleta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c1f896da86b910fc8eac\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b03b55361db348cba15bdd1\"],\r\n  \"fechaEstimadaEntrega\": \"2026-12-22T17:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Revisión adicional\",\r\n    \"condicionesObservadas\": \"Sin novedad\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear orden de servicio con fecha de entrega pasada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c1f896da86b910fc8eac\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b03b55361db348cba15bdd1\"],\r\n  \"fechaEstimadaEntrega\": \"2025-01-10T10:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Falla en frenos\",\r\n    \"condicionesObservadas\": \"Sin novedad\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear orden de servicio con bicicleta de otro cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c23b96da86b910fc8eae\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b03b55361db348cba15bdd1\"],\r\n  \"fechaEstimadaEntrega\": \"2026-12-20T17:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Ajuste de suspensión\",\r\n    \"condicionesObservadas\": \"Horquilla con pérdida de presión\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear orden de servicio con usuario que no tiene rol tecnico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"clienteId\": \"6b03a6a061db348cba15bdce\",\r\n  \"bicicletaId\": \"6b03c1f896da86b910fc8eac\",\r\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"tecnicosAsignados\": [\"6b040470d9c9024c3ff7452c\"],\r\n  \"fechaEstimadaEntrega\": \"2026-12-20T17:00:00\",\r\n  \"recepcion\": {\r\n    \"problemaReportado\": \"Revisión general\",\r\n    \"condicionesObservadas\": \"Buen estado\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todas las ordenes de servicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar historial de ordenes por bicicleta",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/?bicicletaId=6b03c1f896da86b910fc8eac",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ],
+          "query": [
+            {
+              "key": "bicicletaId",
+              "value": "6b03c1f896da86b910fc8eac"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtrar ordenes de servicio por cliente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/?clienteId=6b03a6a061db348cba15bdce",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "6b03a6a061db348cba15bdce"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtrar ordenes de servicio por estado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/?estado=recibida",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            ""
+          ],
+          "query": [
+            {
+              "key": "estado",
+              "value": "recibida"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar orden de servicio por Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar orden de servicio por id invalido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/abc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar orden de servicio que no existe",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar un hallazgo cuando la orden no esta en diagnostico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"componente\": \"Sensor de torque\",\r\n  \"condicion\": \"Conector sulfatado\",\r\n  \"descripcion\": \"Pérdida intermitente de señal bajo carga\",\r\n  \"prioridad\": \"alta\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "hallazgos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cambiar estado de la orden a en_diagnostico",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"en_diagnostico\",\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"observacion\": \"Técnico inicia revisión del sistema eléctrico y transmisión\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pasar a pendiente_autorizacion sin hallazgos registrados",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"pendiente_autorizacion\",\r\n  \"usuarioId\": \"ID_TECNICO\",\r\n  \"observacion\": \"Intento finalizar diagnóstico sin registrar hallazgos\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar hallazgo en el diagnostico con evidencias",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"componente\": \"Sensor de torque / cableado motor\",\r\n  \"condicion\": \"Conector sulfatado con falso contacto\",\r\n  \"descripcion\": \"Al probar bajo carga el sensor pierde señal intermitentemente\",\r\n  \"prioridad\": \"alta\",\r\n  \"observaciones\": \"Requiere limpieza dieléctrica y reemplazo de arnés\",\r\n  \"accionesRecomendadas\": \"Cambio de arnés de sensor de pedalier y prueba en banco\",\r\n  \"evidencias\": [\r\n    {\r\n      \"nombreArchivo\": \"conector_sulfatado.jpg\",\r\n      \"ubicacion\": \"/uploads/diagnosticos/conector_sulfatado.jpg\",\r\n      \"descripcion\": \"Detalle de sulfatación en pin 3\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "hallazgos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar hallazgo con prioridad invalida",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"componente\": \"Cadena\",\r\n  \"condicion\": \"Estiramiento superior al 0.75%\",\r\n  \"descripcion\": \"Desgaste normal por uso\",\r\n  \"prioridad\": \"urgente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "hallazgos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cambiar estado de la orden a pendiente_autorizacion con hallazgos registrados",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"pendiente_autorizacion\",\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"observacion\": \"Diagnóstico finalizado con hallazgos documentados; pendiente aprobación del cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cambiar estado de la orden con un usuario que no es coordinador ni técnico asignado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
