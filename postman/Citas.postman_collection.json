@@ -22,11 +22,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/usuarios/",
+          "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "usuarios",
             ""
           ]
@@ -49,11 +51,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/usuarios/",
+          "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "usuarios",
             ""
           ]
@@ -76,11 +80,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -103,11 +109,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -121,11 +129,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -139,11 +149,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/?clienteId=6b03a6a061db348cba15bdce",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/?clienteId=6b03a6a061db348cba15bdce",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ],
@@ -163,11 +175,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/?estado=solicitada",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/?estado=solicitada",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ],
@@ -187,11 +201,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b040661d9c9024c3ff7452e",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b040661d9c9024c3ff7452e"
           ]
@@ -214,11 +230,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -241,11 +259,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -268,11 +288,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -295,11 +317,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -322,11 +346,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -349,11 +375,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -367,11 +395,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/abc",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/abc",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "abc"
           ]
@@ -385,11 +415,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/citas/000000000000000000000000",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/000000000000000000000000",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "000000000000000000000000"
           ]
@@ -412,11 +444,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/confirmar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b040661d9c9024c3ff7452e/confirmar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b040661d9c9024c3ff7452e",
             "confirmar"
@@ -440,11 +474,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/confirmar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b040661d9c9024c3ff7452e/confirmar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b040661d9c9024c3ff7452e",
             "confirmar"
@@ -468,11 +504,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/confirmar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b04070cd9c9024c3ff7452f/confirmar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b04070cd9c9024c3ff7452f",
             "confirmar"
@@ -496,11 +534,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/reprogramar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b040661d9c9024c3ff7452e/reprogramar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b040661d9c9024c3ff7452e",
             "reprogramar"
@@ -524,11 +564,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/reprogramar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b04070cd9c9024c3ff7452f/reprogramar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b04070cd9c9024c3ff7452f",
             "reprogramar"
@@ -552,11 +594,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/cancelar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b04070cd9c9024c3ff7452f/cancelar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b04070cd9c9024c3ff7452f",
             "cancelar"
@@ -580,11 +624,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b04070cd9c9024c3ff7452f/cancelar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b04070cd9c9024c3ff7452f/cancelar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b04070cd9c9024c3ff7452f",
             "cancelar"
@@ -608,11 +654,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/6b040661d9c9024c3ff7452e/cancelar",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/6b040661d9c9024c3ff7452e/cancelar",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             "6b040661d9c9024c3ff7452e",
             "cancelar"
@@ -636,11 +684,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/citas/",
+          "raw": "{{baseUrl}}/UAO/apirest/citas/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "citas",
             ""
           ]
@@ -652,7 +702,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": ""
+      "value": "http://localhost:8080"
     }
   ]
 }

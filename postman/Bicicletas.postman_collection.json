@@ -21,12 +21,10 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/UAO/apirest/bicicletas/",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/UAO/apirest/bicicletas/",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "8080",
           "path": [
             "UAO",
             "apirest",
@@ -2570,7 +2568,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": ""
+      "value": "http://localhost:8080"
     }
   ]
 }
