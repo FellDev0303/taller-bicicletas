@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PuntoVerificado {
     private String punto;
-    private Boolean verificado;
-    private String observacion;
+    private String resultado;
 }
