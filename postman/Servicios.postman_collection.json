@@ -1,0 +1,297 @@
+{
+  "info": {
+    "_postman_id": "a44581d2-4adb-4691-acb6-e61e9593f7d8",
+    "name": "Servicios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-a44581d2-4adb-4691-acb6-e61e9593f7d8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear servicio valido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Ajuste de frenos\",\r\n    \"categoria\": \"frenos\",\r\n    \"descripcion\": \"Revisión y ajuste del sistema de frenos\",\r\n    \"duracionEstimada\": 1.5,\r\n    \"precioReferencia\": 35000,\r\n    \"tareasHabituales\": [\r\n        {\r\n            \"nombre\": \"Revisar pastillas\",\r\n            \"descripcion\": \"Verificar el desgaste de las pastillas\"\r\n        },\r\n        {\r\n            \"nombre\": \"Ajustar calibres\",\r\n            \"descripcion\": \"Alinear y ajustar los calibres\"\r\n        }\r\n    ],\r\n    \"recomendacionesGenerales\": \"Revisar los frenos cada 3 meses\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear servicio valido (sin tareas ni recomendaciones)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Mantenimiento de transmisión\",\r\n  \"categoria\": \"transmision\",\r\n  \"descripcion\": \"Limpieza y lubricación de la transmisión\",\r\n  \"duracionEstimada\": 2,\r\n  \"precioReferencia\": 45000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar servicios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filtrar servicios por categoria",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/?categoria=frenos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoria",
+              "value": "frenos"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar servicio por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/6b03b69c61db348cba15bdd3",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            "6b03b69c61db348cba15bdd3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear servicio con categoria inventada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Pintura de cuadro\",\r\n  \"categoria\": \"pintura\",\r\n  \"descripcion\": \"Pintura completa del cuadro\",\r\n  \"duracionEstimada\": 3,\r\n  \"precioReferencia\": 120000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear servicio con una tarea sin nombre",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Ajuste de frenos\",\r\n  \"categoria\": \"frenos\",\r\n  \"descripcion\": \"Revisión y ajuste del sistema de frenos\",\r\n  \"duracionEstimada\": 1.5,\r\n  \"precioReferencia\": 35000,\r\n  \"tareasHabituales\": [\r\n    {\r\n      \"descripcion\": \"Verificar el desgaste de las pastillas\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear servicio con duracion 0",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Ajuste de frenos\",\r\n  \"categoria\": \"frenos\",\r\n  \"descripcion\": \"Revisión y ajuste del sistema de frenos\",\r\n  \"duracionEstimada\": 0,\r\n  \"precioReferencia\": 35000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar servicio",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Ajuste completo de frenos\",\r\n  \"categoria\": \"frenos\",\r\n  \"descripcion\": \"Revisión, ajuste y purga del sistema de frenos\",\r\n  \"duracionEstimada\": 2,\r\n  \"precioReferencia\": 45000,\r\n  \"tareasHabituales\": [\r\n    {\r\n      \"nombre\": \"Purgar líquido\",\r\n      \"descripcion\": \"Cambiar el líquido de frenos\"\r\n    }\r\n  ],\r\n  \"recomendacionesGenerales\": \"Revisar los frenos cada 3 meses\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/6b03b41f61db348cba15bdd0",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            "6b03b41f61db348cba15bdd0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar servicio con id invalido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/abc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar servicio que no existe",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/servicios/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "servicios",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}

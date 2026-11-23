@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "e57bca33-2f80-49bc-af4f-5c462ee34384",
+    "name": "Repuestos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-e57bca33-2f80-49bc-af4f-5c462ee34384?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear repuesto valido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cadena 11 velocidades\",\r\n  \"especificaciones\": \"Compatible con transmisión Shimano 11v, 116 eslabones\",\r\n  \"precio\": 85000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Repuestos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar un repuesto por  id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/6b03acfd61db348cba15bdcf",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            "6b03acfd61db348cba15bdcf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear repuesto sin nombre",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"especificaciones\": \"Compatible con transmisión Shimano 11v, 116 eslabones\",\r\n  \"precio\": 85000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear repuesto con precio negativo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cadena 11 velocidades\",\r\n  \"especificaciones\": \"Compatible con transmisión Shimano 11v, 116 eslabones\",\r\n  \"precio\": -500\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar repuesto",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cadena 11 velocidades reforzada\",\r\n  \"especificaciones\": \"Compatible con transmisión Shimano 11v, 116 eslabones, tratamiento anticorrosión\",\r\n  \"precio\": 95000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/6b03acfd61db348cba15bdcf",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            "6b03acfd61db348cba15bdcf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar repuesto con id invalido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/abc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar repuesto que no existe",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar repuesto que no existe",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cadena 11 velocidades reforzada\",\r\n  \"especificaciones\": \"Compatible con transmisión Shimano 11v, 116 eslabones, tratamiento anticorrosión\",\r\n  \"precio\": 95000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/UAO/apirest/repuestos/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "UAO",
+            "apirest",
+            "repuestos",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
