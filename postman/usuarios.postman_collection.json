@@ -66,7 +66,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/UAO/apirest/usuarios/6b03582aace93c2f0c36cc4a",
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/6b03a6a061db348cba15bdce",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -74,7 +74,7 @@
                 "UAO",
                 "apirest",
                 "usuarios",
-                "6b03582aace93c2f0c36cc4a"
+                "6b03a6a061db348cba15bdce"
               ]
             }
           },
