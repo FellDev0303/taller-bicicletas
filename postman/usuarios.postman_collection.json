@@ -1,0 +1,277 @@
+{
+  "info": {
+    "_postman_id": "4b195d4f-9b73-4f29-9cdd-f75b76b1b44e",
+    "name": "Taller Bicicletas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-4b195d4f-9b73-4f29-9cdd-f75b76b1b44e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Crear Usuario Valido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Ana Pérez\",\r\n  \"documento\": \"1130123456\",\r\n  \"correo\": \"ana.perez@example.com\",\r\n  \"telefono\": \"3001234567\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Calle 5 # 10-20\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            },
+            "description": "Crea un usuario válido mediante `POST {{baseUrl}}/UAO/apirest/usuarios/`.\n\nEl cuerpo JSON requiere: `nombreCompleto`, `documento`, `correo`, `telefono`, `rol` y `direccion`.\n\nSi la solicitud es válida, el usuario se crea correctamente. Si ya existe un usuario con el mismo `documento`, la API puede responder con HTTP 409."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar usuario por su id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/6b03582aace93c2f0c36cc4a",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                "6b03582aace93c2f0c36cc4a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear usuario sin correo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Carlos Gómez\",\r\n  \"documento\": \"111\",\r\n  \"telefono\": \"3109876543\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Carrera 10 # 20-30\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear usuario con correo mal formado",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Carlos Gómez\",\r\n  \"documento\": \"112\",\r\n  \"correo\": \"esto-no-es-correo\",\r\n  \"telefono\": \"3109876543\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Carrera 10 # 20-30\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear usuario con rol inventado",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Carlos Gómez\",\r\n  \"documento\": \"113\",\r\n  \"correo\": \"carlos.gomez@example.com\",\r\n  \"telefono\": \"3109876543\",\r\n  \"rol\": \"gerente\",\r\n  \"direccion\": \"Carrera 10 # 20-30\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear usuario con documento repetido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Otra Persona\",\r\n  \"documento\": \"1130123456\",\r\n  \"correo\": \"otra.persona@example.com\",\r\n  \"telefono\": \"3112223344\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Avenida 3 # 4-50\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear usuario con correo repetido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreCompleto\": \"Otra Persona\",\r\n  \"documento\": \"99999999\",\r\n  \"correo\": \"ana.perez@example.com\",\r\n  \"telefono\": \"3112223344\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Avenida 3 # 4-50\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar usuario con id invalido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/abc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                "abc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar usuario que no existe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/UAO/apirest/usuarios/000000000000000000000000",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "UAO",
+                "apirest",
+                "usuarios",
+                "000000000000000000000000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
