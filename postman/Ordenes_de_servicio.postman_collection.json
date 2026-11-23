@@ -22,11 +22,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -49,11 +51,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -76,11 +80,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -103,11 +109,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -130,11 +138,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -157,11 +167,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -175,11 +187,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ]
@@ -193,11 +207,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/?bicicletaId=6b03c1f896da86b910fc8eac",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/?bicicletaId=6b03c1f896da86b910fc8eac",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ],
@@ -217,11 +233,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/?clienteId=6b03a6a061db348cba15bdce",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/?clienteId=6b03a6a061db348cba15bdce",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ],
@@ -241,11 +259,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/?estado=recibida",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/?estado=recibida",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             ""
           ],
@@ -265,11 +285,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6"
           ]
@@ -283,11 +305,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/abc",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/abc",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "abc"
           ]
@@ -301,11 +325,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/ordenes/000000000000000000000000",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/000000000000000000000000",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "000000000000000000000000"
           ]
@@ -328,11 +354,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/hallazgos",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "hallazgos"
@@ -356,11 +384,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/estado",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "estado"
@@ -384,11 +414,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/estado",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "estado"
@@ -412,11 +444,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/hallazgos",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "hallazgos"
@@ -440,11 +474,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/hallazgos",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/hallazgos",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "hallazgos"
@@ -468,11 +504,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/estado",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "estado"
@@ -496,11 +534,13 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/ordenes/6b047119c1400963ddaa03a6/estado",
+          "raw": "{{baseUrl}}/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/estado",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
+            "UAO",
+            "apirest",
             "ordenes",
             "6b047119c1400963ddaa03a6",
             "estado"
@@ -513,7 +553,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": ""
+      "value": "http://localhost:8080"
     }
   ]
 }
