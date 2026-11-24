@@ -1,0 +1,896 @@
+{
+  "info": {
+    "_postman_id": "005a35e7-5a33-4bf9-b924-bdacc410e74e",
+    "name": "Revision_entrega_y_entrega",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58664473"
+  },
+  "item": [
+    {
+      "name": "Intento de registrar revision cuando ordenServicio no esta en estado en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba de asistencia del motor en banco\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Sin observaciones\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b047119c1400963ddaa03a6",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intento de registrar revision cuando ordenServicio no esta en estado en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba de asistencia del motor en banco\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Sin observaciones\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b047119c1400963ddaa03a6/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b047119c1400963ddaa03a6",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 05:26:29 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T00:26:29.342392900\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo se puede registrar la revisión de entrega cuando la orden está en estado 'en_ejecucion'\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar registrar revisión de entrega con trabajos pendientes de autorización",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Verificación final de los frenos nuevos\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Pendiente decisión del cliente sobre intervención adicional\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar registrar revisión de entrega con trabajos pendientes de autorización",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Verificación final de los frenos nuevos\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Pendiente decisión del cliente sobre intervención adicional\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 05:47:10 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T00:47:10.922799400\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"No se puede realizar la revisión de entrega porque existen trabajos pendientes de autorización por el cliente\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar registrar revisión de entrega con trabajos autorizados sin finalizar",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Pedales\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Mantener limpieza constante para evitar deterioro temprano\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar registrar revisión de entrega con trabajos autorizados sin finalizar",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Pedales\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Mantener limpieza constante para evitar deterioro temprano\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:00:01 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T01:00:01.105623700\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"No se puede realizar la revisión de entrega porque existen trabajos pendientes de autorización por el cliente\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Revisión de entrega por un usuario sin permisos",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba general\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Revisión de entrega por un usuario sin permisos",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba general\",\r\n      \"resultado\": \"OK\"\r\n    }\r\n  ],\r\n  \"aprobada\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:14:44 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T01:14:44.707058200\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo un coordinador o un técnico asignado a la orden puede registrar la revisión de entrega\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Registrar revisión de entrega NO aprobada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba general\",\r\n      \"resultado\": \"cumple\"\r\n    }\r\n  ],\r\n  \"aprobada\": \"false\",\r\n  \"recomendaciones\": \"Ajustar recorrido de maneta de freno trasero antes de liberar para entrega\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Registrar revisión de entrega NO aprobada",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Prueba general\",\r\n      \"resultado\": \"cumple\"\r\n    }\r\n  ],\r\n  \"aprobada\": \"false\",\r\n  \"recomendaciones\": \"Ajustar recorrido de maneta de freno trasero antes de liberar para entrega\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:22:54 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b173b3bb99279ed86344\",\n  \"clienteId\": \"6b03c21296da86b910fc8ead\",\n  \"bicicleta\": {\n    \"bicicletaId\": \"6b03c26196da86b910fc8eb0\",\n    \"marca\": \"Scott\",\n    \"modelo\": \"Speedster 20\"\n  },\n  \"citaId\": null,\n  \"fechaRecepcion\": \"2026-11-23T16:34:43.04\",\n  \"fechaEstimadaEntrega\": \"2026-12-26T16:00:00\",\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\n  \"tecnicosAsignados\": [\n    \"6b03b55361db348cba15bdd1\"\n  ],\n  \"estado\": \"en_ejecucion\",\n  \"recepcion\": {\n    \"problemaReportado\": \"Desajuste en cambios traseros y ruido al pedalear con fuerza\",\n    \"condicionesObservadas\": \"Cadena con desgaste visible y pastillas de freno al 30%\",\n    \"accesorios\": [\n      \"Portacaramañola\",\n      \"Luz trasera\"\n    ],\n    \"fotografias\": [\n      {\n        \"nombreArchivo\": \"ingreso_transmision.jpg\",\n        \"ubicacion\": \"/uploads/ordenes/2026/11/ingreso_transmision.jpg\",\n        \"descripcion\": \"Estado de la transmisión al ingreso\"\n      }\n    ]\n  },\n  \"hallazgos\": [\n    {\n      \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n      \"componente\": \"Transmisión trasera y cadena\",\n      \"condicion\": \"Cadena elongada y tensor descalibrado\",\n      \"descripcion\": \"Al pedalear con fuerza la cadena salta entre piñones y genera ruido por desgaste excesivo\",\n      \"prioridad\": \"alta\",\n      \"observaciones\": \"Las pastillas de freno también presentan desgaste del 70%\",\n      \"accionesRecomendadas\": \"Reemplazo de cadena, cambio de pastillas de freno y calibración de tensor trasero\",\n      \"evidencias\": [\n        {\n          \"nombreArchivo\": \"desgaste_cadena_transmision.jpg\",\n          \"ubicacion\": \"/uploads/diagnosticos/desgaste_cadena_transmision.jpg\",\n          \"descripcion\": \"Medición de elongación de cadena superior al límite recomendado\"\n        }\n      ]\n    }\n  ],\n  \"historialEstados\": [\n    {\n      \"estado\": \"recibida\",\n      \"fecha\": \"2026-11-23T16:34:43.04\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Orden creada al recibir la bicicleta\"\n    },\n    {\n      \"estado\": \"en_diagnostico\",\n      \"fecha\": \"2026-11-23T16:39:22.347\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Técnico inicia revisión de la transmisión, cambios traseros y desgaste de cadena y frenos\"\n    },\n    {\n      \"estado\": \"pendiente_autorizacion\",\n      \"fecha\": \"2026-11-23T16:47:09.566\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Diagnóstico completado. Se envía presupuesto al cliente para autorizar cambio de cadena, pastillas de freno y ajuste de transmisión\"\n    },\n    {\n      \"estado\": \"en_ejecucion\",\n      \"fecha\": \"2026-11-23T16:47:25.483\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Cliente autorizó los trabajos. Técnico inicia reemplazo de cadena, pastillas de freno y calibración de cambios traseros\"\n    }\n  ],\n  \"revisionEntrega\": {\n    \"fecha\": \"2026-11-24T01:22:54.6428181\",\n    \"puntosVerificados\": [\n      {\n        \"punto\": \"Prueba general\",\n        \"resultado\": \"cumple\"\n      }\n    ],\n    \"aprobada\": false,\n    \"recomendaciones\": \"Ajustar recorrido de maneta de freno trasero antes de liberar para entrega\"\n  },\n  \"entrega\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar entrega final antes de pasar a lista_entrega",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\":\"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "entrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar entrega final antes de pasar a lista_entrega",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\":\"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "entrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:29:49 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T01:29:49.395566100\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo se puede registrar la entrega cuando la orden está en estado 'lista_entrega'\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Registrar revisión de entrega APROBADA",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Cadena nueva\",\r\n      \"resultado\": \"cumple\"\r\n    },\r\n    {\r\n      \"punto\": \"Cambio de pedales\",\r\n      \"resultado\": \"cumple\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Registrar revisión de entrega APROBADA",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Cadena nueva\",\r\n      \"resultado\": \"cumple\"\r\n    },\r\n    {\r\n      \"punto\": \"Cambio de pedales\",\r\n      \"resultado\": \"cumple\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/revisionEntrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "revisionEntrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:39:18 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b173b3bb99279ed86344\",\n  \"clienteId\": \"6b03c21296da86b910fc8ead\",\n  \"bicicleta\": {\n    \"bicicletaId\": \"6b03c26196da86b910fc8eb0\",\n    \"marca\": \"Scott\",\n    \"modelo\": \"Speedster 20\"\n  },\n  \"citaId\": null,\n  \"fechaRecepcion\": \"2026-11-23T16:34:43.04\",\n  \"fechaEstimadaEntrega\": \"2026-12-26T16:00:00\",\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\n  \"tecnicosAsignados\": [\n    \"6b03b55361db348cba15bdd1\"\n  ],\n  \"estado\": \"lista_entrega\",\n  \"recepcion\": {\n    \"problemaReportado\": \"Desajuste en cambios traseros y ruido al pedalear con fuerza\",\n    \"condicionesObservadas\": \"Cadena con desgaste visible y pastillas de freno al 30%\",\n    \"accesorios\": [\n      \"Portacaramañola\",\n      \"Luz trasera\"\n    ],\n    \"fotografias\": [\n      {\n        \"nombreArchivo\": \"ingreso_transmision.jpg\",\n        \"ubicacion\": \"/uploads/ordenes/2026/11/ingreso_transmision.jpg\",\n        \"descripcion\": \"Estado de la transmisión al ingreso\"\n      }\n    ]\n  },\n  \"hallazgos\": [\n    {\n      \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n      \"componente\": \"Transmisión trasera y cadena\",\n      \"condicion\": \"Cadena elongada y tensor descalibrado\",\n      \"descripcion\": \"Al pedalear con fuerza la cadena salta entre piñones y genera ruido por desgaste excesivo\",\n      \"prioridad\": \"alta\",\n      \"observaciones\": \"Las pastillas de freno también presentan desgaste del 70%\",\n      \"accionesRecomendadas\": \"Reemplazo de cadena, cambio de pastillas de freno y calibración de tensor trasero\",\n      \"evidencias\": [\n        {\n          \"nombreArchivo\": \"desgaste_cadena_transmision.jpg\",\n          \"ubicacion\": \"/uploads/diagnosticos/desgaste_cadena_transmision.jpg\",\n          \"descripcion\": \"Medición de elongación de cadena superior al límite recomendado\"\n        }\n      ]\n    }\n  ],\n  \"historialEstados\": [\n    {\n      \"estado\": \"recibida\",\n      \"fecha\": \"2026-11-23T16:34:43.04\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Orden creada al recibir la bicicleta\"\n    },\n    {\n      \"estado\": \"en_diagnostico\",\n      \"fecha\": \"2026-11-23T16:39:22.347\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Técnico inicia revisión de la transmisión, cambios traseros y desgaste de cadena y frenos\"\n    },\n    {\n      \"estado\": \"pendiente_autorizacion\",\n      \"fecha\": \"2026-11-23T16:47:09.566\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Diagnóstico completado. Se envía presupuesto al cliente para autorizar cambio de cadena, pastillas de freno y ajuste de transmisión\"\n    },\n    {\n      \"estado\": \"en_ejecucion\",\n      \"fecha\": \"2026-11-23T16:47:25.483\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Cliente autorizó los trabajos. Técnico inicia reemplazo de cadena, pastillas de freno y calibración de cambios traseros\"\n    },\n    {\n      \"estado\": \"lista_entrega\",\n      \"fecha\": \"2026-11-24T01:39:18.0926979\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\n    }\n  ],\n  \"revisionEntrega\": {\n    \"fecha\": \"2026-11-24T01:39:18.0926979\",\n    \"puntosVerificados\": [\n      {\n        \"punto\": \"Cadena nueva\",\n        \"resultado\": \"cumple\"\n      },\n      {\n        \"punto\": \"Cambio de pedales\",\n        \"resultado\": \"cumple\"\n      }\n    ],\n    \"aprobada\": true,\n    \"recomendaciones\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\n  },\n  \"entrega\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar registrar entrega sin confirmación de recepción del cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "entrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar registrar entrega sin confirmación de recepción del cliente",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "entrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:46:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T01:46:15.134738100\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Se requiere la confirmación de recepción del cliente para completar la entrega\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Registrar entrega final exitosa",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "entrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Registrar entrega final exitosa",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "entrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:49:37 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b173b3bb99279ed86344\",\n  \"clienteId\": \"6b03c21296da86b910fc8ead\",\n  \"bicicleta\": {\n    \"bicicletaId\": \"6b03c26196da86b910fc8eb0\",\n    \"marca\": \"Scott\",\n    \"modelo\": \"Speedster 20\"\n  },\n  \"citaId\": null,\n  \"fechaRecepcion\": \"2026-11-23T16:34:43.04\",\n  \"fechaEstimadaEntrega\": \"2026-12-26T16:00:00\",\n  \"coordinadorId\": \"6b03b5f161db348cba15bdd2\",\n  \"tecnicosAsignados\": [\n    \"6b03b55361db348cba15bdd1\"\n  ],\n  \"estado\": \"entregada\",\n  \"recepcion\": {\n    \"problemaReportado\": \"Desajuste en cambios traseros y ruido al pedalear con fuerza\",\n    \"condicionesObservadas\": \"Cadena con desgaste visible y pastillas de freno al 30%\",\n    \"accesorios\": [\n      \"Portacaramañola\",\n      \"Luz trasera\"\n    ],\n    \"fotografias\": [\n      {\n        \"nombreArchivo\": \"ingreso_transmision.jpg\",\n        \"ubicacion\": \"/uploads/ordenes/2026/11/ingreso_transmision.jpg\",\n        \"descripcion\": \"Estado de la transmisión al ingreso\"\n      }\n    ]\n  },\n  \"hallazgos\": [\n    {\n      \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n      \"componente\": \"Transmisión trasera y cadena\",\n      \"condicion\": \"Cadena elongada y tensor descalibrado\",\n      \"descripcion\": \"Al pedalear con fuerza la cadena salta entre piñones y genera ruido por desgaste excesivo\",\n      \"prioridad\": \"alta\",\n      \"observaciones\": \"Las pastillas de freno también presentan desgaste del 70%\",\n      \"accionesRecomendadas\": \"Reemplazo de cadena, cambio de pastillas de freno y calibración de tensor trasero\",\n      \"evidencias\": [\n        {\n          \"nombreArchivo\": \"desgaste_cadena_transmision.jpg\",\n          \"ubicacion\": \"/uploads/diagnosticos/desgaste_cadena_transmision.jpg\",\n          \"descripcion\": \"Medición de elongación de cadena superior al límite recomendado\"\n        }\n      ]\n    }\n  ],\n  \"historialEstados\": [\n    {\n      \"estado\": \"recibida\",\n      \"fecha\": \"2026-11-23T16:34:43.04\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Orden creada al recibir la bicicleta\"\n    },\n    {\n      \"estado\": \"en_diagnostico\",\n      \"fecha\": \"2026-11-23T16:39:22.347\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Técnico inicia revisión de la transmisión, cambios traseros y desgaste de cadena y frenos\"\n    },\n    {\n      \"estado\": \"pendiente_autorizacion\",\n      \"fecha\": \"2026-11-23T16:47:09.566\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Diagnóstico completado. Se envía presupuesto al cliente para autorizar cambio de cadena, pastillas de freno y ajuste de transmisión\"\n    },\n    {\n      \"estado\": \"en_ejecucion\",\n      \"fecha\": \"2026-11-23T16:47:25.483\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Cliente autorizó los trabajos. Técnico inicia reemplazo de cadena, pastillas de freno y calibración de cambios traseros\"\n    },\n    {\n      \"estado\": \"lista_entrega\",\n      \"fecha\": \"2026-11-24T01:39:18.092\",\n      \"usuarioId\": \"6b03b55361db348cba15bdd1\",\n      \"observacion\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\n    },\n    {\n      \"estado\": \"entregada\",\n      \"fecha\": \"2026-11-24T01:49:37.3147778\",\n      \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\n      \"observacion\": \"Bicicleta entregada al cliente\"\n    }\n  ],\n  \"revisionEntrega\": {\n    \"fecha\": \"2026-11-24T01:39:18.092\",\n    \"puntosVerificados\": [\n      {\n        \"punto\": \"Cadena nueva\",\n        \"resultado\": \"cumple\"\n      },\n      {\n        \"punto\": \"Cambio de pedales\",\n        \"resultado\": \"cumple\"\n      }\n    ],\n    \"aprobada\": true,\n    \"recomendaciones\": \"Realizar revisiones periódicas a la cadena y a los pedales\"\n  },\n  \"entrega\": {\n    \"fecha\": \"2026-11-24T01:49:37.3147778\",\n    \"confirmacionRecepcionCliente\": true\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar entregar nuevamente una orden ya entregada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b04b173b3bb99279ed86344",
+            "entrega"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar entregar nuevamente una orden ya entregada",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/ordenes/6b04b173b3bb99279ed86344/entrega",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "ordenes",
+                "6b04b173b3bb99279ed86344",
+                "entrega"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 06:54:35 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-24T01:54:35.215254800\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo se puede registrar la entrega cuando la orden está en estado 'lista_entrega'\",\n  \"detalles\": null\n}"
+        }
+      ]
+    }
+  ]
+}
