@@ -117,6 +117,7 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
         trabajo.setObservaciones(dto.getObservaciones());
         trabajo.setAutorizacion(null);
         trabajo.setEjecucion(null);
+        trabajo.setGarantia(null);
 
         return convertirADTO(trabajosOrdenRepository.save(trabajo));
     }
@@ -192,6 +193,9 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
         if (dto.getFechaFinalizacion() != null && dto.getFechaFinalizacion().isBefore(dto.getFechaInicio())) {
             throw new SolicitudInvalidaException("La fecha de finalización no puede ser anterior a la fecha de inicio");
         }
+        if (dto.getGarantia() != null && !"finalizado".equals(dto.getEstado())) {
+            throw new SolicitudInvalidaException("Solo se puede asociar una garantía cuando el estado de ejecución es 'finalizado'");
+        }
 
         List<TrabajosOrdenModel.RepuestoUtilizado> utilizadosModelo = new ArrayList<>();
         if (dto.getRepuestosUtilizados() != null) {
@@ -220,6 +224,17 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
                 dto.getEstado(),
                 dto.getDescripcionRealizada(),
                 utilizadosModelo));
+
+        if (dto.getGarantia() != null) {
+            LocalDateTime inicioGarantia = dto.getGarantia().getFechaInicio() != null
+                    ? dto.getGarantia().getFechaInicio()
+                    : dto.getFechaFinalizacion();
+            trabajo.setGarantia(new TrabajosOrdenModel.Garantia(
+                    dto.getGarantia().getDuracion(),
+                    inicioGarantia,
+                    dto.getGarantia().getCondiciones(),
+                    dto.getGarantia().getExclusiones()));
+        }
 
         return convertirADTO(trabajosOrdenRepository.save(trabajo));
     }
@@ -327,6 +342,15 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
                     totalRepuestos);
         }
 
+        TrabajoOrdenResponseDTO.GarantiaDTO garDTO = null;
+        if (t.getGarantia() != null) {
+            garDTO = new TrabajoOrdenResponseDTO.GarantiaDTO(
+                    t.getGarantia().getDuracion(),
+                    t.getGarantia().getFechaInicio(),
+                    t.getGarantia().getCondiciones(),
+                    t.getGarantia().getExclusiones());
+        }
+
         return new TrabajoOrdenResponseDTO(
                 t.getId().toHexString(),
                 t.getOrdenId().toHexString(),
@@ -339,6 +363,7 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
                 calcularValorEstimado(t),
                 t.getObservaciones(),
                 autDTO,
-                ejeDTO);
+                ejeDTO,
+                garDTO);
     }
 }
