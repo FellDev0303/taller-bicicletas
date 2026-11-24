@@ -52,8 +52,8 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
                 || orden.getDiagnostico().getHallazgos().isEmpty()) {
             throw new ConflictoException("No se pueden proponer trabajos porque la orden aún no tiene diagnóstico registrado");
         }
-        if (!"pendiente_autorizacion".equals(orden.getEstado())) {
-            throw new ConflictoException("Solo se pueden proponer trabajos cuando la orden está en estado 'pendiente_autorizacion'");
+        if (!"pendiente_autorizacion".equals(orden.getEstado()) && !"en_ejecucion".equals(orden.getEstado())) {
+            throw new ConflictoException("Solo se pueden proponer trabajos cuando la orden está en estado 'pendiente_autorizacion' o 'en_ejecucion'");
         }
 
         UsuariosModel tecnico = buscarUsuarioConRol(dto.getTecnicoId(), "tecnico", "el técnico");
@@ -140,8 +140,8 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
         OrdenesServicioModel orden = ordenesRepository.findById(trabajo.getOrdenId())
                 .orElseThrow(() -> new RecursoNoEncontradoException("No existe la orden asociada al trabajo"));
 
-        if ("entregada".equals(orden.getEstado()) || "cancelada".equals(orden.getEstado())) {
-            throw new ConflictoException("No se puede autorizar o rechazar un trabajo en una orden entregada o cancelada");
+        if (!"pendiente_autorizacion".equals(orden.getEstado()) && !"en_ejecucion".equals(orden.getEstado())) {
+            throw new ConflictoException("Solo se pueden autorizar o rechazar trabajos cuando la orden está en estado 'pendiente_autorizacion' o 'en_ejecucion'");
         }
 
         ObjectId usuarioId = convertirAObjectId(dto.getUsuarioId(), "usuarioId");
@@ -149,9 +149,8 @@ public class TrabajosOrdenServiceImp implements ITrabajoOrdenService {
                 .orElseThrow(() -> new RecursoNoEncontradoException("No existe un usuario con el id " + dto.getUsuarioId()));
 
         boolean esClienteDeLaOrden = "cliente".equals(usuario.getRol()) && usuario.getId().equals(orden.getClienteId());
-        boolean esCoordinador = "coordinador".equals(usuario.getRol());
-        if (!esClienteDeLaOrden && !esCoordinador) {
-            throw new ConflictoException("Solo el cliente propietario de la orden o un coordinador pueden autorizar o rechazar trabajos");
+        if (!esClienteDeLaOrden) {
+            throw new ConflictoException("Solo el cliente propietario de la orden puede autorizar o rechazar trabajos");
         }
 
         if (trabajo.getAutorizacion() != null) {
