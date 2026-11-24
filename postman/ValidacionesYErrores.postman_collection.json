@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "801ded04-bdbd-455b-abc2-0f889f3a161a",
+    "name": "ValidacionesYErrores",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-801ded04-bdbd-455b-abc2-0f889f3a161a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Recurso no encontrado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/000000000000000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "000000000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ID o dato inválido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/id-mal-formado-123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "id-mal-formado-123"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Regla de negocio violada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Intento de autorización por un técnico en vez del cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04b73564562cf079291f1a",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validación @Valid en DTO",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"\",\r\n  \"tecnicoId\": \"\",\r\n  \"componente\": \"\",\r\n  \"manoObraEstimada\": -10000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "JSON mal formado o tipo incompatible",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"fecha-invalida-2026\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Prueba de deserialización de fecha\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/{idTrabajo}/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "{idTrabajo}",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Parámetro obligatorio faltante",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Índice único duplicado en MongoDB",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombreCompleto\": \"Mateo Duplicado\",\r\n  \"documento\": \"1144098712\",\r\n  \"correo\": \"mateo.valderrama@correo.com\",\r\n  \"telefono\": \"3150000000\",\r\n  \"rol\": \"cliente\",\r\n  \"direccion\": \"Calle 5 # 45-20, Cali\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/usuarios/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Documento rechazado por $jsonSchema de MongoDB",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombreCompleto\": \"Usuario Rol Inválido\",\r\n  \"documento\": \"9988776655\",\r\n  \"correo\": \"rol.invalido@correo.com\",\r\n  \"telefono\": \"3151112233\",\r\n  \"rol\": \"administrador\",\r\n  \"direccion\": \"Cali\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/usuarios/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
