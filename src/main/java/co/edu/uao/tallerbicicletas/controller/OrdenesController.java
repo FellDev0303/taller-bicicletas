@@ -20,6 +20,7 @@ import co.edu.uao.tallerbicicletas.dto.HallazgoDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenResponseDTO;
 import co.edu.uao.tallerbicicletas.dto.RevisionEntregaRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.ValoracionRequestDTO;
 import co.edu.uao.tallerbicicletas.service.IOrdenService;
 
 import jakarta.validation.Valid;
@@ -67,6 +68,7 @@ public class OrdenesController {
     public ResponseEntity<OrdenResponseDTO> agregarHallazgo(@PathVariable String id, @Valid @RequestBody HallazgoDTO hallazgo){
         return new ResponseEntity<OrdenResponseDTO>(ordenService.agregarHallazgo(id, hallazgo), HttpStatus.CREATED);
     }
+
     @PutMapping ("/{id}/revisionEntrega")
     public ResponseEntity<OrdenResponseDTO> registrarRevisionEntrega(@PathVariable String id, @Valid @RequestBody RevisionEntregaRequestDTO revision){
         return new ResponseEntity<OrdenResponseDTO>(ordenService.registrarRevisionEntrega(id, revision), HttpStatus.OK);
@@ -75,5 +77,10 @@ public class OrdenesController {
     @PutMapping ("/{id}/entrega")
     public ResponseEntity<OrdenResponseDTO> registrarEntrega(@PathVariable String id, @Valid @RequestBody EntregaRequestDTO entrega){
         return new ResponseEntity<OrdenResponseDTO>(ordenService.registrarEntrega(id, entrega), HttpStatus.OK);
+    }
+
+    @PutMapping ("/{id}/valoracion")
+    public ResponseEntity<OrdenResponseDTO> registrarValoracion(@PathVariable String id, @Valid @RequestBody ValoracionRequestDTO valoracion){
+        return new ResponseEntity<OrdenResponseDTO>(ordenService.registrarValoracion(id, valoracion), HttpStatus.OK);
     }
 }
