@@ -14,11 +14,16 @@ import org.springframework.stereotype.Service;
 import co.edu.uao.tallerbicicletas.dto.AdjuntoDTO;
 import co.edu.uao.tallerbicicletas.dto.BicicletaOrdenDTO;
 import co.edu.uao.tallerbicicletas.dto.CambioEstadoRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.EntregaRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.EntregaResponseDTO;
 import co.edu.uao.tallerbicicletas.dto.HallazgoDTO;
 import co.edu.uao.tallerbicicletas.dto.HistorialEstadoDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenResponseDTO;
+import co.edu.uao.tallerbicicletas.dto.PuntoVerificadoDTO;
 import co.edu.uao.tallerbicicletas.dto.RecepcionDTO;
+import co.edu.uao.tallerbicicletas.dto.RevisionEntregaRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.RevisionEntregaResponseDTO;
 import co.edu.uao.tallerbicicletas.exception.ConflictoException;
 import co.edu.uao.tallerbicicletas.exception.RecursoNoEncontradoException;
 import co.edu.uao.tallerbicicletas.exception.SolicitudInvalidaException;
@@ -27,14 +32,19 @@ import co.edu.uao.tallerbicicletas.model.BicicletaOrden;
 import co.edu.uao.tallerbicicletas.model.BicicletasModel;
 import co.edu.uao.tallerbicicletas.model.CitasModel;
 import co.edu.uao.tallerbicicletas.model.Diagnostico;
+import co.edu.uao.tallerbicicletas.model.Entrega;
 import co.edu.uao.tallerbicicletas.model.Hallazgo;
 import co.edu.uao.tallerbicicletas.model.HistorialEstado;
 import co.edu.uao.tallerbicicletas.model.OrdenesServicioModel;
+import co.edu.uao.tallerbicicletas.model.PuntoVerificado;
 import co.edu.uao.tallerbicicletas.model.Recepcion;
+import co.edu.uao.tallerbicicletas.model.RevisionEntrega;
+import co.edu.uao.tallerbicicletas.model.TrabajosOrdenModel;
 import co.edu.uao.tallerbicicletas.model.UsuariosModel;
 import co.edu.uao.tallerbicicletas.repository.IBicicletasRepository;
 import co.edu.uao.tallerbicicletas.repository.ICitasRepository;
 import co.edu.uao.tallerbicicletas.repository.IOrdenesServicioRepository;
+import co.edu.uao.tallerbicicletas.repository.ITrabajosOrdenRepository;
 import co.edu.uao.tallerbicicletas.repository.IUsuariosRepository;
 
 @Service
@@ -43,6 +53,7 @@ public class OrdenesServiceImp implements IOrdenService {
     @Autowired IUsuariosRepository usuariosRepository;
     @Autowired IBicicletasRepository bicicletasRepository;
     @Autowired ICitasRepository citasRepository;
+    @Autowired ITrabajosOrdenRepository trabajosOrdenRepository;
 
     // Estados en los que una orden se considera activa (la bicicleta no puede tener otra)
     private static final List<String> ESTADOS_ACTIVOS = List.of(
@@ -222,6 +233,101 @@ public class OrdenesServiceImp implements IOrdenService {
         orden.getDiagnostico().getHallazgos().add(hallazgo);
         return convertirADTO(ordenesRepository.save(orden));
     }
+    @Override
+    public OrdenResponseDTO registrarRevisionEntrega(String idOrden, RevisionEntregaRequestDTO dto) {
+        OrdenesServicioModel orden = buscarModelo(idOrden);
+
+        if (!"en_ejecucion".equals(orden.getEstado())) {
+            throw new ConflictoException("Solo se puede registrar la revisión de entrega cuando la orden está en estado 'en_ejecucion'");
+        }
+
+        ObjectId idUsuario = convertirAObjectId(dto.getUsuarioId(), "usuarioId");
+        UsuariosModel usuario = usuariosRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("No existe un usuario con el id " + dto.getUsuarioId()));
+
+        boolean esCoordinador = "coordinador".equals(usuario.getRol());
+        boolean esTecnicoAsignado = "tecnico".equals(usuario.getRol())
+                && orden.getTecnicosAsignados() != null
+                && orden.getTecnicosAsignados().contains(usuario.getId());
+        if (!esCoordinador && !esTecnicoAsignado) {
+            throw new ConflictoException("Solo un coordinador o un técnico asignado a la orden puede registrar la revisión de entrega");
+        }
+
+        // Validar trabajos asociados a la orden:
+        // 1. No deben existir trabajos pendientes de decisión del cliente (autorizacion == null)
+        // 2. Todos los trabajos autorizados deben estar en ejecucion.estado == "finalizado"
+        List<TrabajosOrdenModel> trabajos = trabajosOrdenRepository.findByOrdenId(orden.getId());
+        boolean hayPendientesAutorizacion = trabajos.stream()
+                .anyMatch(t -> t.getAutorizacion() == null);
+        if (hayPendientesAutorizacion) {
+            throw new ConflictoException("No se puede realizar la revisión de entrega porque existen trabajos pendientes de autorización por el cliente");
+        }
+
+        boolean hayAutorizadosSinFinalizar = trabajos.stream()
+                .filter(t -> "autorizado".equals(t.getAutorizacion().getDecision()))
+                .anyMatch(t -> t.getEjecucion() == null || !"finalizado".equals(t.getEjecucion().getEstado()));
+        if (hayAutorizadosSinFinalizar) {
+            throw new ConflictoException("No se puede realizar la revisión de entrega porque existen trabajos autorizados sin finalizar");
+        }
+
+        List<PuntoVerificado> puntos = new ArrayList<>();
+        for (PuntoVerificadoDTO p : dto.getPuntosVerificados()) {
+            puntos.add(new PuntoVerificado(p.getPunto(), p.getResultado()));
+        }
+
+        LocalDateTime ahora = LocalDateTime.now();
+        orden.setRevisionEntrega(new RevisionEntrega(ahora, puntos, dto.getAprobada(), dto.getRecomendaciones()));
+
+        // Solo si la revisión es aprobada, la orden pasa a 'lista_entrega'
+        if (Boolean.TRUE.equals(dto.getAprobada())) {
+            orden.setEstado("lista_entrega");
+            if (orden.getHistorialEstados() == null) {
+                orden.setHistorialEstados(new ArrayList<>());
+            }
+            String obs = (dto.getRecomendaciones() != null && !dto.getRecomendaciones().isBlank())
+                    ? dto.getRecomendaciones()
+                    : "Revisión de entrega aprobada";
+            orden.getHistorialEstados().add(new HistorialEstado("lista_entrega", ahora, idUsuario, obs));
+        }
+
+        return convertirADTO(ordenesRepository.save(orden));
+    }
+
+    @Override
+    public OrdenResponseDTO registrarEntrega(String idOrden, EntregaRequestDTO dto) {
+        OrdenesServicioModel orden = buscarModelo(idOrden);
+
+        if (!"lista_entrega".equals(orden.getEstado())) {
+            throw new ConflictoException("Solo se puede registrar la entrega cuando la orden está en estado 'lista_entrega'");
+        }
+
+        if (orden.getRevisionEntrega() == null || !Boolean.TRUE.equals(orden.getRevisionEntrega().getAprobada())) {
+            throw new ConflictoException("La orden no cuenta con una revisión de entrega aprobada");
+        }
+
+        if (!Boolean.TRUE.equals(dto.getConfirmacionRecepcionCliente())) {
+            throw new SolicitudInvalidaException("Se requiere la confirmación de recepción del cliente para completar la entrega");
+        }
+
+        ObjectId idUsuario = convertirAObjectId(dto.getUsuarioId(), "usuarioId");
+        UsuariosModel usuario = usuariosRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("No existe un usuario con el id " + dto.getUsuarioId()));
+
+        if (!"coordinador".equals(usuario.getRol())) {
+            throw new ConflictoException("Solo un coordinador puede registrar la entrega final de la bicicleta");
+        }
+
+        LocalDateTime ahora = LocalDateTime.now();
+        orden.setEntrega(new Entrega(ahora, dto.getConfirmacionRecepcionCliente()));
+        orden.setEstado("entregada");
+
+        if (orden.getHistorialEstados() == null) {
+            orden.setHistorialEstados(new ArrayList<>());
+        }
+        orden.getHistorialEstados().add(new HistorialEstado("entregada", ahora, idUsuario, "Bicicleta entregada al cliente"));
+
+        return convertirADTO(ordenesRepository.save(orden));
+    }
 
     // ---------- Métodos de apoyo ----------
 
@@ -328,6 +434,22 @@ public class OrdenesServiceImp implements IOrdenService {
             }
         }
         dto.setHistorialEstados(historial);
+        if (orden.getRevisionEntrega() != null) {
+            RevisionEntrega rev = orden.getRevisionEntrega();
+            List<PuntoVerificadoDTO> puntosDTO = new ArrayList<>();
+            if (rev.getPuntosVerificados() != null) {
+                for (PuntoVerificado p : rev.getPuntosVerificados()) {
+                    puntosDTO.add(new PuntoVerificadoDTO(p.getPunto(), p.getResultado()));
+                }
+            }
+            dto.setRevisionEntrega(new RevisionEntregaResponseDTO(
+                    rev.getFecha(), puntosDTO, rev.getAprobada(), rev.getRecomendaciones()));
+        }
+
+        if (orden.getEntrega() != null) {
+            Entrega ent = orden.getEntrega();
+            dto.setEntrega(new EntregaResponseDTO(ent.getFecha(), ent.getConfirmacionRecepcionCliente()));
+        }
         return dto;
     }
 }

@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.uao.tallerbicicletas.dto.CambioEstadoRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.EntregaRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.HallazgoDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenResponseDTO;
+import co.edu.uao.tallerbicicletas.dto.RevisionEntregaRequestDTO;
 import co.edu.uao.tallerbicicletas.service.IOrdenService;
 
 import jakarta.validation.Valid;
@@ -64,5 +66,14 @@ public class OrdenesController {
     @PostMapping ("/{id}/hallazgos")
     public ResponseEntity<OrdenResponseDTO> agregarHallazgo(@PathVariable String id, @Valid @RequestBody HallazgoDTO hallazgo){
         return new ResponseEntity<OrdenResponseDTO>(ordenService.agregarHallazgo(id, hallazgo), HttpStatus.CREATED);
+    }
+    @PutMapping ("/{id}/revisionEntrega")
+    public ResponseEntity<OrdenResponseDTO> registrarRevisionEntrega(@PathVariable String id, @Valid @RequestBody RevisionEntregaRequestDTO revision){
+        return new ResponseEntity<OrdenResponseDTO>(ordenService.registrarRevisionEntrega(id, revision), HttpStatus.OK);
+    }
+
+    @PutMapping ("/{id}/entrega")
+    public ResponseEntity<OrdenResponseDTO> registrarEntrega(@PathVariable String id, @Valid @RequestBody EntregaRequestDTO entrega){
+        return new ResponseEntity<OrdenResponseDTO>(ordenService.registrarEntrega(id, entrega), HttpStatus.OK);
     }
 }
