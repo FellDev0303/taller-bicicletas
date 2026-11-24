@@ -23,4 +23,6 @@ public class OrdenResponseDTO {
     private RecepcionDTO recepcion;
     private List<HallazgoDTO> hallazgos;
     private List<HistorialEstadoDTO> historialEstados;
+    private RevisionEntregaResponseDTO revisionEntrega;
+    private EntregaResponseDTO entrega;
 }
