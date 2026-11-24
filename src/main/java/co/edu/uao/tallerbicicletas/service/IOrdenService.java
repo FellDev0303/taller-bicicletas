@@ -8,6 +8,7 @@ import co.edu.uao.tallerbicicletas.dto.HallazgoDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.OrdenResponseDTO;
 import co.edu.uao.tallerbicicletas.dto.RevisionEntregaRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.ValoracionRequestDTO;
 
 public interface IOrdenService {
     public OrdenResponseDTO crearOrden(OrdenRequestDTO orden);
@@ -20,4 +21,5 @@ public interface IOrdenService {
     public OrdenResponseDTO agregarHallazgo(String idOrden, HallazgoDTO hallazgo);
     public OrdenResponseDTO registrarRevisionEntrega(String idOrden, RevisionEntregaRequestDTO dto);
     public OrdenResponseDTO registrarEntrega(String idOrden, EntregaRequestDTO dto);
+    public OrdenResponseDTO registrarValoracion(String idOrden, ValoracionRequestDTO dto);
 }

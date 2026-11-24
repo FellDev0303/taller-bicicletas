@@ -35,6 +35,9 @@ public class EjecutarTrabajoRequestDTO {
     @Valid
     private List<RepuestoUtilizadoDTO> repuestosUtilizados;
 
+    @Valid
+    private GarantiaTrabajoDTO garantia;
+
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -49,5 +52,21 @@ public class EjecutarTrabajoRequestDTO {
 
         @PositiveOrZero(message = "El precio unitario aplicado no puede ser negativo")
         private Integer precioUnitarioAplicado;
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class GarantiaTrabajoDTO {
+        @NotNull(message = "La duración de la garantía (en días) es obligatoria")
+        @Positive(message = "La duración de la garantía debe ser mayor que cero")
+        private Integer duracion;
+
+        private LocalDateTime fechaInicio;
+
+        @NotBlank(message = "Las condiciones de la garantía son obligatorias")
+        private String condiciones;
+
+        private String exclusiones;
     }
 }

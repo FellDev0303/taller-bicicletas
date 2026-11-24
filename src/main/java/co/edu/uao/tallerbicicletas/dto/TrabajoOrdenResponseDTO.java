@@ -23,6 +23,7 @@ public class TrabajoOrdenResponseDTO {
     private String observaciones;
     private AutorizacionDTO autorizacion;
     private EjecucionDTO ejecucion;
+    private GarantiaDTO garantia;
 
     @Data
     @AllArgsConstructor
@@ -43,5 +44,15 @@ public class TrabajoOrdenResponseDTO {
         private String descripcionRealizada;
         private List<EjecutarTrabajoRequestDTO.RepuestoUtilizadoDTO> repuestosUtilizados;
         private Integer valorTotalRepuestosAplicados;
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class GarantiaDTO {
+        private Integer duracion;
+        private LocalDateTime fechaInicio;
+        private String condiciones;
+        private String exclusiones;
     }
 }

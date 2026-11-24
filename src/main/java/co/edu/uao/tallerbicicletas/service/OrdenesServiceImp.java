@@ -24,6 +24,8 @@ import co.edu.uao.tallerbicicletas.dto.PuntoVerificadoDTO;
 import co.edu.uao.tallerbicicletas.dto.RecepcionDTO;
 import co.edu.uao.tallerbicicletas.dto.RevisionEntregaRequestDTO;
 import co.edu.uao.tallerbicicletas.dto.RevisionEntregaResponseDTO;
+import co.edu.uao.tallerbicicletas.dto.ValoracionRequestDTO;
+import co.edu.uao.tallerbicicletas.dto.ValoracionResponseDTO;
 import co.edu.uao.tallerbicicletas.exception.ConflictoException;
 import co.edu.uao.tallerbicicletas.exception.RecursoNoEncontradoException;
 import co.edu.uao.tallerbicicletas.exception.SolicitudInvalidaException;
@@ -41,6 +43,7 @@ import co.edu.uao.tallerbicicletas.model.Recepcion;
 import co.edu.uao.tallerbicicletas.model.RevisionEntrega;
 import co.edu.uao.tallerbicicletas.model.TrabajosOrdenModel;
 import co.edu.uao.tallerbicicletas.model.UsuariosModel;
+import co.edu.uao.tallerbicicletas.model.ValoracionServicio;
 import co.edu.uao.tallerbicicletas.repository.IBicicletasRepository;
 import co.edu.uao.tallerbicicletas.repository.ICitasRepository;
 import co.edu.uao.tallerbicicletas.repository.IOrdenesServicioRepository;
@@ -233,6 +236,7 @@ public class OrdenesServiceImp implements IOrdenService {
         orden.getDiagnostico().getHallazgos().add(hallazgo);
         return convertirADTO(ordenesRepository.save(orden));
     }
+
     @Override
     public OrdenResponseDTO registrarRevisionEntrega(String idOrden, RevisionEntregaRequestDTO dto) {
         OrdenesServicioModel orden = buscarModelo(idOrden);
@@ -326,6 +330,33 @@ public class OrdenesServiceImp implements IOrdenService {
         }
         orden.getHistorialEstados().add(new HistorialEstado("entregada", ahora, idUsuario, "Bicicleta entregada al cliente"));
 
+        return convertirADTO(ordenesRepository.save(orden));
+    }
+
+    @Override
+    public OrdenResponseDTO registrarValoracion(String idOrden, ValoracionRequestDTO dto) {
+        OrdenesServicioModel orden = buscarModelo(idOrden);
+
+        if (!"entregada".equals(orden.getEstado())) {
+            throw new ConflictoException("Solo se pueden valorar órdenes de servicio en estado 'entregada'");
+        }
+
+        if (orden.getValoracionServicio() != null) {
+            throw new ConflictoException("Esta orden de servicio ya cuenta con una valoración registrada");
+        }
+
+        UsuariosModel cliente = buscarUsuarioConRol(dto.getUsuarioId(), "cliente", "el cliente");
+        if (!orden.getClienteId().equals(cliente.getId())) {
+            throw new ConflictoException("Solo el cliente propietario de la orden puede registrar su valoración");
+        }
+
+        ValoracionServicio valoracion = new ValoracionServicio();
+        valoracion.setCalificacion(dto.getCalificacion());
+        valoracion.setComentarios(dto.getComentarios());
+        valoracion.setSugerencias(dto.getSugerencias());
+        valoracion.setFecha(LocalDateTime.now());
+
+        orden.setValoracionServicio(valoracion);
         return convertirADTO(ordenesRepository.save(orden));
     }
 
@@ -434,6 +465,7 @@ public class OrdenesServiceImp implements IOrdenService {
             }
         }
         dto.setHistorialEstados(historial);
+
         if (orden.getRevisionEntrega() != null) {
             RevisionEntrega rev = orden.getRevisionEntrega();
             List<PuntoVerificadoDTO> puntosDTO = new ArrayList<>();
@@ -450,6 +482,13 @@ public class OrdenesServiceImp implements IOrdenService {
             Entrega ent = orden.getEntrega();
             dto.setEntrega(new EntregaResponseDTO(ent.getFecha(), ent.getConfirmacionRecepcionCliente()));
         }
+
+        if (orden.getValoracionServicio() != null) {
+            ValoracionServicio val = orden.getValoracionServicio();
+            dto.setValoracionServicio(new ValoracionResponseDTO(
+                    val.getCalificacion(), val.getComentarios(), val.getSugerencias(), val.getFecha()));
+        }
+
         return dto;
     }
 }
