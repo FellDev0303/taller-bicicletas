@@ -1,0 +1,1706 @@
+{
+  "info": {
+    "_postman_id": "d5964601-b868-4744-b397-f41563c80f50",
+    "name": "Trabajos_autorizacion_y_ejecucion",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58664473"
+  },
+  "item": [
+    {
+      "name": "Proponer trabajo con servicio de catálogo y repuestos para ordenServicio con estado \"pendiente_autorizacion\"",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"servicio\": {\r\n    \"servicioId\": \"6b04b66764562cf079291f19\"\r\n  },\r\n  \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\r\n  \"componente\": \"Sensor de torque / cableado motor\",\r\n  \"manoObraEstimada\": 80000,\r\n  \"repuestosPrevistos\": [\r\n    {\r\n      \"repuestoId\": \"6b04b5b964562cf079291f18\",\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer trabajo con servicio de catálogo y repuestos para ordenServicio con estado \"pendiente_autorizacion\"",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"servicio\": {\r\n    \"servicioId\": \"6b04b66764562cf079291f19\"\r\n  },\r\n  \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\r\n  \"componente\": \"Sensor de torque / cableado motor\",\r\n  \"manoObraEstimada\": 80000,\r\n  \"repuestosPrevistos\": [\r\n    {\r\n      \"repuestoId\": \"6b04b5b964562cf079291f18\",\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 21:59:17 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b73564562cf079291f1a\",\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": {\n    \"servicioId\": \"6b04b66764562cf079291f19\",\n    \"nombre\": \"Diagnóstico electrónico y reemplazo de arnés de motor e-Bike\",\n    \"descripcion\": \"Limpieza dieléctrica de terminales, reemplazo de arnés del sensor de torque del pedalier y verificación de asistencia bajo carga\"\n  },\n  \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\n  \"componente\": \"Sensor de torque / cableado motor\",\n  \"manoObraEstimada\": 80000,\n  \"repuestosPrevistos\": [\n    {\n      \"repuestoId\": \"6b04b5b964562cf079291f18\",\n      \"nombre\": \"Arnés de cableado y conector sensor de torque Specialized Turbo\",\n      \"especificaciones\": \"Cableado interno blindado de 4 pines con conector sellado IP67 para motor central Specialized Turbo Vado\",\n      \"cantidad\": 1,\n      \"precioUnitarioEstimado\": 95000\n    }\n  ],\n  \"valorEstimadoPropuesta\": 175000,\n  \"observaciones\": null,\n  \"autorizacion\": null,\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Proponer trabajo sin servicio ni repuestos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Sellado preventivo de carcasa lateral del motor y ajuste de tornillería\",\r\n  \"componente\": \"Carcasa motor eléctrico\",\r\n  \"manoObraEstimada\": 30000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer trabajo sin servicio ni repuestos",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Sellado preventivo de carcasa lateral del motor y ajuste de tornillería\",\r\n  \"componente\": \"Carcasa motor eléctrico\",\r\n  \"manoObraEstimada\": 30000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 22:35:16 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04bfa4e39afd33b805243c\",\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Sellado preventivo de carcasa lateral del motor y ajuste de tornillería\",\n  \"componente\": \"Carcasa motor eléctrico\",\n  \"manoObraEstimada\": 30000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 30000,\n  \"observaciones\": null,\n  \"autorizacion\": null,\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Proponer trabajo a una ordenServicio sin diagnóstico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b047333c1400963ddaa03a7\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Ajuste general de frenos\",\r\n  \"componente\": \"Frenos\",\r\n  \"manoObraEstimada\": 25000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer trabajo a una ordenServicio sin diagnóstico",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b047333c1400963ddaa03a7\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Ajuste general de frenos\",\r\n  \"componente\": \"Frenos\",\r\n  \"manoObraEstimada\": 25000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 22:46:33 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T17:46:33.561506500\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"No se pueden proponer trabajos porque la orden aún no tiene diagnóstico registrado\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Proponer trabajo sin campos obligatorios",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}",
+          "host": [
+            "{{baseUrl}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer trabajo sin campos obligatorios",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 22:57:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T17:57:41.453483200\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"mensaje\": \"Los datos enviados no son válidos\",\n  \"detalles\": [\n    \"componente: El componente es obligatorio\",\n    \"manoObraEstimada: La mano de obra estimada es obligatoria\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Consultar trabajoOrden propuestos por el id de ordenServicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/?ordenId=6b047119c1400963ddaa03a6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ],
+          "query": [
+            {
+              "key": "ordenId",
+              "value": "6b047119c1400963ddaa03a6"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar trabajoOrden propuestos por el id de ordenServicio",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/?ordenId=6b047119c1400963ddaa03a6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "ordenId",
+                  "value": "6b047119c1400963ddaa03a6"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 23:05:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": \"6b04b73564562cf079291f1a\",\n    \"ordenId\": \"6b047119c1400963ddaa03a6\",\n    \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n    \"servicio\": {\n      \"servicioId\": \"6b04b66764562cf079291f19\",\n      \"nombre\": \"Diagnóstico electrónico y reemplazo de arnés de motor e-Bike\",\n      \"descripcion\": \"Limpieza dieléctrica de terminales, reemplazo de arnés del sensor de torque del pedalier y verificación de asistencia bajo carga\"\n    },\n    \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\n    \"componente\": \"Sensor de torque / cableado motor\",\n    \"manoObraEstimada\": 80000,\n    \"repuestosPrevistos\": [\n      {\n        \"repuestoId\": \"6b04b5b964562cf079291f18\",\n        \"nombre\": \"Arnés de cableado y conector sensor de torque Specialized Turbo\",\n        \"especificaciones\": \"Cableado interno blindado de 4 pines con conector sellado IP67 para motor central Specialized Turbo Vado\",\n        \"cantidad\": 1,\n        \"precioUnitarioEstimado\": 95000\n      }\n    ],\n    \"valorEstimadoPropuesta\": 175000,\n    \"observaciones\": null,\n    \"autorizacion\": null,\n    \"ejecucion\": null\n  },\n  {\n    \"id\": \"6b04bfa4e39afd33b805243c\",\n    \"ordenId\": \"6b047119c1400963ddaa03a6\",\n    \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n    \"servicio\": null,\n    \"descripcionIntervencion\": \"Sellado preventivo de carcasa lateral del motor y ajuste de tornillería\",\n    \"componente\": \"Carcasa motor eléctrico\",\n    \"manoObraEstimada\": 30000,\n    \"repuestosPrevistos\": [],\n    \"valorEstimadoPropuesta\": 30000,\n    \"observaciones\": null,\n    \"autorizacion\": null,\n    \"ejecucion\": null\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consultar trabajoOrden por su id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04b73564562cf079291f1a"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar trabajoOrden por su id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04b73564562cf079291f1a"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 23:09:53 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b73564562cf079291f1a\",\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": {\n    \"servicioId\": \"6b04b66764562cf079291f19\",\n    \"nombre\": \"Diagnóstico electrónico y reemplazo de arnés de motor e-Bike\",\n    \"descripcion\": \"Limpieza dieléctrica de terminales, reemplazo de arnés del sensor de torque del pedalier y verificación de asistencia bajo carga\"\n  },\n  \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\n  \"componente\": \"Sensor de torque / cableado motor\",\n  \"manoObraEstimada\": 80000,\n  \"repuestosPrevistos\": [\n    {\n      \"repuestoId\": \"6b04b5b964562cf079291f18\",\n      \"nombre\": \"Arnés de cableado y conector sensor de torque Specialized Turbo\",\n      \"especificaciones\": \"Cableado interno blindado de 4 pines con conector sellado IP67 para motor central Specialized Turbo Vado\",\n      \"cantidad\": 1,\n      \"precioUnitarioEstimado\": 95000\n    }\n  ],\n  \"valorEstimadoPropuesta\": 175000,\n  \"observaciones\": null,\n  \"autorizacion\": null,\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Autorizar una propuesta de trabajoOrden por su Id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Autorizo el cambio del arnés y la revisión eléctrica\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04b73564562cf079291f1a",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Autorizar una propuesta de trabajoOrden por su Id",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Autorizo el cambio del arnés y la revisión eléctrica\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04b73564562cf079291f1a",
+                "autorizacion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 23:16:08 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04b73564562cf079291f1a\",\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": {\n    \"servicioId\": \"6b04b66764562cf079291f19\",\n    \"nombre\": \"Diagnóstico electrónico y reemplazo de arnés de motor e-Bike\",\n    \"descripcion\": \"Limpieza dieléctrica de terminales, reemplazo de arnés del sensor de torque del pedalier y verificación de asistencia bajo carga\"\n  },\n  \"descripcionIntervencion\": \"Limpieza dieléctrica, cambio de arnés de sensor de torque y prueba en banco del motor eléctrico\",\n  \"componente\": \"Sensor de torque / cableado motor\",\n  \"manoObraEstimada\": 80000,\n  \"repuestosPrevistos\": [\n    {\n      \"repuestoId\": \"6b04b5b964562cf079291f18\",\n      \"nombre\": \"Arnés de cableado y conector sensor de torque Specialized Turbo\",\n      \"especificaciones\": \"Cableado interno blindado de 4 pines con conector sellado IP67 para motor central Specialized Turbo Vado\",\n      \"cantidad\": 1,\n      \"precioUnitarioEstimado\": 95000\n    }\n  ],\n  \"valorEstimadoPropuesta\": 175000,\n  \"observaciones\": null,\n  \"autorizacion\": {\n    \"decision\": \"autorizado\",\n    \"fecha\": \"2026-11-23T18:16:07.7419204\",\n    \"comentarios\": \"Autorizo el cambio del arnés y la revisión eléctrica\"\n  },\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Rechazar una propuesta de trabajoOrden por su Id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"No autorizo esta intervención adicional por ahora\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04bfa4e39afd33b805243c/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04bfa4e39afd33b805243c",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Rechazar una propuesta de trabajoOrden por su Id",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"No autorizo esta intervención adicional por ahora\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04bfa4e39afd33b805243c/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04bfa4e39afd33b805243c",
+                "autorizacion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 23 Nov 2026 23:25:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04bfa4e39afd33b805243c\",\n  \"ordenId\": \"6b047119c1400963ddaa03a6\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Sellado preventivo de carcasa lateral del motor y ajuste de tornillería\",\n  \"componente\": \"Carcasa motor eléctrico\",\n  \"manoObraEstimada\": 30000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 30000,\n  \"observaciones\": null,\n  \"autorizacion\": {\n    \"decision\": \"rechazado\",\n    \"fecha\": \"2026-11-23T18:25:20.8588488\",\n    \"comentarios\": \"No autorizo esta intervención adicional por ahora\"\n  },\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Proponer intervención adicional durante la reparación",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Reemplazo de tornillería de soporte de cadena detectada con desgaste durante la reparación\",\r\n  \"componente\": \"Soporte cadena\",\r\n  \"manoObraEstimada\": 10000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer intervención adicional durante la reparación",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Reemplazo de tornillería de soporte de cadena detectada con desgaste durante la reparación\",\r\n  \"componente\": \"Soporte cadena\",\r\n  \"manoObraEstimada\": 10000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 00:33:23 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04db5376c7711aa3eaaf64\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Reemplazo de tornillería de soporte de cadena detectada con desgaste durante la reparación\",\n  \"componente\": \"Soporte cadena\",\n  \"manoObraEstimada\": 10000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 10000,\n  \"observaciones\": null,\n  \"autorizacion\": null,\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Proponer trabajo a una ordenServicio cancelada con diagnóstico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b04e354974f7a5443c13e1e\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Intervención en orden cancelada\",\r\n  \"componente\": \"Frenos\",\r\n  \"manoObraEstimada\": 25000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Proponer trabajo a una ordenServicio cancelada con diagnóstico",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b04e354974f7a5443c13e1e\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Intervención en orden cancelada\",\r\n  \"componente\": \"Frenos\",\r\n  \"manoObraEstimada\": 25000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:17:57 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:17:57.436996700\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo se pueden proponer trabajos cuando la orden está en estado 'pendiente_autorizacion' o 'en_ejecucion'\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intentar cambiar la autorización de un trabajoOrden a rechazado",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"Intento de sobrescribir decisión previa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04b73564562cf079291f1a",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intentar cambiar la autorización de un trabajoOrden a rechazado",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03a6a061db348cba15bdce\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"Intento de sobrescribir decisión previa\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04b73564562cf079291f1a",
+                "autorizacion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:19:53 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:19:53.857490\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Este trabajo ya tiene una decisión de autorización registrada (autorizado)\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intento de autorizar un trabajoOrden sin ser el propietario de la ordenServicio",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b0404b6d9c9024c3ff7452d\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Intento de aprobación desde un rol distinto al cliente dueño\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04db5376c7711aa3eaaf64",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intento de autorizar un trabajoOrden sin ser el propietario de la ordenServicio",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b0404b6d9c9024c3ff7452d\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Intento de aprobación desde un rol distinto al cliente dueño\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04db5376c7711aa3eaaf64",
+                "autorizacion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:24:47 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:24:47.902326100\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo el cliente propietario de la orden puede autorizar o rechazar trabajos\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intento de ejecución de un trabajoOrden previamente autorizado cuando la ordenServicio no ha cambiado su estado a en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:00:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de iniciar ejecución antes de pasar la orden a en_ejecucion\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04b73564562cf079291f1a",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intento de ejecución de un trabajoOrden previamente autorizado cuando la ordenServicio no ha cambiado su estado a en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:00:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de iniciar ejecución antes de pasar la orden a en_ejecucion\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04b73564562cf079291f1a/ejecucion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04b73564562cf079291f1a",
+                "ejecucion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:33:09 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:33:09.283755200\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo se pueden ejecutar trabajos cuando la orden está en estado 'en_ejecucion'\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Rechazo de trabajoOrden de una ordenServicio en_ejecucion para otra prueba",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"En este momento no autorizo esa intervención adicional\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04db5376c7711aa3eaaf64",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Rechazo de trabajoOrden de una ordenServicio en_ejecucion para otra prueba",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"decision\": \"rechazado\",\r\n  \"comentarios\": \"En este momento no autorizo esa intervención adicional\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04db5376c7711aa3eaaf64",
+                "autorizacion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:39:17 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04db5376c7711aa3eaaf64\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Reemplazo de tornillería de soporte de cadena detectada con desgaste durante la reparación\",\n  \"componente\": \"Soporte cadena\",\n  \"manoObraEstimada\": 10000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 10000,\n  \"observaciones\": null,\n  \"autorizacion\": {\n    \"decision\": \"rechazado\",\n    \"fecha\": \"2026-11-23T20:39:17.7637536\",\n    \"comentarios\": \"En este momento no autorizo esa intervención adicional\"\n  },\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intento de ejecución de un trabajoOrden previamente rechazado cuando la ordenServicio está en estado en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:05:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de ejecutar trabajo rechazado por el cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04db5376c7711aa3eaaf64",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intento de ejecución de un trabajoOrden previamente rechazado cuando la ordenServicio está en estado en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:05:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de ejecutar trabajo rechazado por el cliente\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04db5376c7711aa3eaaf64/ejecucion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04db5376c7711aa3eaaf64",
+                "ejecucion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:42:07 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:42:07.034363100\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo los trabajos autorizados pueden ejecutarse\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Nueva propuesta de trabajoOrden para otra prueba",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\r\n  \"componente\": \"Cadena\",\r\n  \"manoObraEstimada\": 25000,\r\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Nueva propuesta de trabajoOrden para otra prueba",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\r\n  \"componente\": \"Cadena\",\r\n  \"manoObraEstimada\": 25000,\r\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                ""
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:48:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04ecf976c7711aa3eaaf65\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\n  \"componente\": \"Cadena\",\n  \"manoObraEstimada\": 25000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 25000,\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\",\n  \"autorizacion\": null,\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Intento de ejecución de un trabajoOrden  sin autorización previa de una ordenServicio en estado en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:10:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de ejecutar trabajo pendiente de autorización\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04ecf976c7711aa3eaaf65",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Intento de ejecución de un trabajoOrden  sin autorización previa de una ordenServicio en estado en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:10:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"Intento de ejecutar trabajo pendiente de autorización\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04ecf976c7711aa3eaaf65",
+                "ejecucion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:52:04 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"fecha\": \"2026-11-23T20:52:04.237345100\",\n  \"status\": 409,\n  \"error\": \"Conflict\",\n  \"mensaje\": \"Solo los trabajos autorizados pueden ejecutarse\",\n  \"detalles\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Autorización de trabajoOrden de una ordenServicio en_ejecucion para otra prueba",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Autorizo la lubricación extra de la cadena\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/autorizacion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04ecf976c7711aa3eaaf65",
+            "autorizacion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Autorización de trabajoOrden de una ordenServicio en_ejecucion para otra prueba",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"usuarioId\": \"6b03c21296da86b910fc8ead\",\r\n  \"decision\": \"autorizado\",\r\n  \"comentarios\": \"Autorizo la lubricación extra de la cadena\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/autorizacion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04ecf976c7711aa3eaaf65",
+                "autorizacion"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 01:56:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04ecf976c7711aa3eaaf65\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\n  \"componente\": \"Cadena\",\n  \"manoObraEstimada\": 25000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 25000,\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\",\n  \"autorizacion\": {\n    \"decision\": \"autorizado\",\n    \"fecha\": \"2026-11-23T20:56:39.6823338\",\n    \"comentarios\": \"Autorizo la lubricación extra de la cadena\"\n  },\n  \"ejecucion\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Iniciar ejecución de un trabajo autorizado con ordenServicio en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:15:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"lubricación adicional de la cadena\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04ecf976c7711aa3eaaf65",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Iniciar ejecución de un trabajo autorizado con ordenServicio en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-23T19:15:00\",\r\n  \"estado\": \"en_curso\",\r\n  \"descripcionRealizada\": \"lubricación adicional de la cadena\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04ecf976c7711aa3eaaf65",
+                "ejecucion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 02:00:57 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04ecf976c7711aa3eaaf65\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\n  \"componente\": \"Cadena\",\n  \"manoObraEstimada\": 25000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 25000,\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\",\n  \"autorizacion\": {\n    \"decision\": \"autorizado\",\n    \"fecha\": \"2026-11-23T20:56:39.682\",\n    \"comentarios\": \"Autorizo la lubricación extra de la cadena\"\n  },\n  \"ejecucion\": {\n    \"fechaInicio\": \"2026-11-23T19:15:00\",\n    \"fechaFinalizacion\": null,\n    \"estado\": \"en_curso\",\n    \"descripcionRealizada\": \"lubricación adicional de la cadena\",\n    \"repuestosUtilizados\": [],\n    \"valorTotalRepuestosAplicados\": 0\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Finalizar ejecución de un trabajoOrden autorizado con ordenServicio en_ejecucion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-24T00:15:00\",\r\n  \"fechaFinalizacion\": \"2026-11-24T00:15:30\",\r\n  \"estado\": \"finalizado\",\r\n  \"descripcionRealizada\": \"lubricación exitosa de la cadena para mejor rendimiento y duración\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b04ecf976c7711aa3eaaf65",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Finalizar ejecución de un trabajoOrden autorizado con ordenServicio en_ejecucion",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-24T00:15:00\",\r\n  \"fechaFinalizacion\": \"2026-11-24T00:15:30\",\r\n  \"estado\": \"finalizado\",\r\n  \"descripcionRealizada\": \"lubricación exitosa de la cadena para mejor rendimiento y duración\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b04ecf976c7711aa3eaaf65/ejecucion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "trabajosOrden",
+                "6b04ecf976c7711aa3eaaf65",
+                "ejecucion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 24 Nov 2026 02:10:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"6b04ecf976c7711aa3eaaf65\",\n  \"ordenId\": \"6b04b173b3bb99279ed86344\",\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\n  \"servicio\": null,\n  \"descripcionIntervencion\": \"Lubricación extra para la cadena\",\n  \"componente\": \"Cadena\",\n  \"manoObraEstimada\": 25000,\n  \"repuestosPrevistos\": [],\n  \"valorEstimadoPropuesta\": 25000,\n  \"observaciones\": \"Extra para mayor duración durante el proceso en ejecución, pendiente de aprobación del cliente\",\n  \"autorizacion\": {\n    \"decision\": \"autorizado\",\n    \"fecha\": \"2026-11-23T20:56:39.682\",\n    \"comentarios\": \"Autorizo la lubricación extra de la cadena\"\n  },\n  \"ejecucion\": {\n    \"fechaInicio\": \"2026-11-24T00:15:00\",\n    \"fechaFinalizacion\": \"2026-11-24T00:15:30\",\n    \"estado\": \"finalizado\",\n    \"descripcionRealizada\": \"lubricación exitosa de la cadena para mejor rendimiento y duración\",\n    \"repuestosUtilizados\": [],\n    \"valorTotalRepuestosAplicados\": 0\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
