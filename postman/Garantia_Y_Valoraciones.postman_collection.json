@@ -1,0 +1,262 @@
+{
+  "info": {
+    "_postman_id": "4550d6c2-3dfa-472e-8125-58fee1d82455",
+    "name": "GarantiaYValoraciones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58478774",
+    "_collection_link": "https://go.postman.co/collection/58478774-4550d6c2-3dfa-472e-8125-58fee1d82455?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Asociar garantía de servicio al finalizar la ejecución de un trabajo",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tecnicoId\": \"6b03b55361db348cba15bdd1\",\r\n  \"fechaInicio\": \"2026-11-24T09:00:00\",\r\n  \"fechaFinalizacion\": \"2026-11-24T10:30:00\",\r\n  \"estado\": \"finalizado\",\r\n  \"descripcionRealizada\": \"Cadena Shimano 12v instalada y cambios calibrados\",\r\n  \"repuestosUtilizados\": [\r\n    {\r\n      \"repuestoId\": \"6b051c722a64ae191bf140bc\",\r\n      \"cantidad\": 1\r\n    }\r\n  ],\r\n  \"garantia\": {\r\n    \"duracion\": 30,\r\n    \"condiciones\": \"Cubre desajustes de indexado o defectos de montaje en la transmisión\",\r\n    \"exclusiones\": \"No cubre desgaste normal, golpes por caída ni falta de lubricación\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/trabajosOrden/6b051f8f2a64ae191bf140c0/ejecucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "trabajosOrden",
+            "6b051f8f2a64ae191bf140c0",
+            "ejecucion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar revisión de entrega aprobada",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b55361db348cba15bdd1\",\r\n  \"puntosVerificados\": [\r\n    {\r\n      \"punto\": \"Sincronización de cambios en los 12 piñones\",\r\n      \"resultado\": \"cumple\"\r\n    },\r\n    {\r\n      \"punto\": \"Presión y purga de freno hidráulico trasero\",\r\n      \"resultado\": \"cumple\"\r\n    }\r\n  ],\r\n  \"aprobada\": true,\r\n  \"recomendaciones\": \"Lubricar cadena cada 150 km en seco y revisar presión de llantas\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b051d862a64ae191bf140bf/revisionEntrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b051d862a64ae191bf140bf",
+            "revisionEntrega"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar entrega final de la bicicleta al cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b03b5f161db348cba15bdd2\",\r\n  \"confirmacionRecepcionCliente\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b051d862a64ae191bf140bf/entrega",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b051d862a64ae191bf140bf",
+            "entrega"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar valoracion",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b0514c12a64ae191bf140ba\",\r\n  \"calificacion\": 5,\r\n  \"comentarios\": \"Excelente atención y entrega puntual, la transmisión quedó muy suave\",\r\n  \"sugerencias\": \"Enviar recordatorio por WhatsApp para el próximo mantenimiento preventivo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b051d862a64ae191bf140bf/valoracion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b051d862a64ae191bf140bf",
+            "valoracion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validar restricción de única valoración por orden y cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuarioId\": \"6b0514c12a64ae191bf140ba\",\r\n  \"calificacion\": 4,\r\n  \"comentarios\": \"Intento de segunda valoración sobre la misma orden\",\r\n  \"sugerencias\": \"Ninguna\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/ordenes/6b051d862a64ae191bf140bf/valoracion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "ordenes",
+            "6b051d862a64ae191bf140bf",
+            "valoracion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar solicitud de garantía vinculada a un trabajo finalizado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"trabajoId\": \"6b051f8f2a64ae191bf140c0\",\r\n  \"descripcion\": \"Se escucha un leve roce en el piñón 11 al pedalear con fuerza\",\r\n  \"evidencias\": [\r\n    {\r\n      \"nombreArchivo\": \"roce_cadena.mp4\",\r\n      \"descripcion\": \"Video corto mostrando el ruido en el piñón pequeño\",\r\n      \"ubicacion\": \"/uploads/garantias/2026/11/roce_cadena.mp4\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/solicitudesGarantia/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "solicitudesGarantia",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar solicitudes de garantía por trabajo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/solicitudesGarantia/?trabajoId=6b051f8f2a64ae191bf140c0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "solicitudesGarantia",
+            ""
+          ],
+          "query": [
+            {
+              "key": "trabajoId",
+              "value": "6b051f8f2a64ae191bf140c0"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Resolver solicitud de garantía",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"resuelta\",\r\n  \"procede\": true,\r\n  \"solucionAplicada\": \"Se recalibró el tornillo de tensión B-tension y se ajustó la guaya del tensor trasero sin costo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/solicitudesGarantia/6b053a783eda0c57c533001d/resolucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "solicitudesGarantia",
+            "6b053a783eda0c57c533001d",
+            "resolucion"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
