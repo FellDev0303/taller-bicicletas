@@ -7,8 +7,8 @@ Proyecto final de **Bases de Datos 2** — Ingeniería Informática, Universidad
 
 | Nombre | Usuario de GitHub | Módulos a cargo |
 | :--- | :--- | :--- |
-| José Alejandro Alzate Arévalo | [@FellDev0303](https://github.com/FellDev0303) | Usuarios, Catálogo (Servicios y Repuestos), Citas, Órdenes de Servicio y Diagnóstico, Documentación Wiki |
-| Verónica Núñez Zorrilla | [@veronz07](https://github.com/veronz07) | Bicicletas, Trabajos de Orden y Autorización, Revisión y Entrega, Garantías, Valoración y Estadísticas |
+| José Alejandro Alzate Arévalo | [@FellDev0303](https://github.com/FellDev0303) | Usuarios, Catálogo (Servicios y Repuestos), Citas, Órdenes de Servicio, Garantías, Valoración y Diagnóstico, Documentación Wiki |
+| Verónica Núñez Zorrilla | [@veronz07](https://github.com/veronz07) | Bicicletas, Trabajos de Orden y Autorización, Revisión y Entrega, y Estadísticas, Documentación Wiki |
 
 ## Descripción
 
