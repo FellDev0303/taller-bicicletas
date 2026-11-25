@@ -1,0 +1,286 @@
+{
+  "info": {
+    "_postman_id": "0a6a08a3-28a8-4fae-b139-2ab5520503fe",
+    "name": "Estadisticas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58664473"
+  },
+  "item": [
+    {
+      "name": "Consultar servicios más solicitados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/serviciosMasSolicitados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "serviciosMasSolicitados"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar servicios más solicitados",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/estadisticas/serviciosMasSolicitados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "estadisticas",
+                "serviciosMasSolicitados"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 25 Nov 2026 02:54:54 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"servicioId\": \"6b051cfe2a64ae191bf140be\",\n    \"nombreServicio\": \"Mantenimiento general de transmisión\",\n    \"cantidadSolicitudes\": 1,\n    \"cantidadAutorizados\": 1\n  },\n  {\n    \"servicioId\": \"6b04b66764562cf079291f19\",\n    \"nombreServicio\": \"Diagnóstico electrónico y reemplazo de arnés de motor e-Bike\",\n    \"cantidadSolicitudes\": 1,\n    \"cantidadAutorizados\": 1\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consultar conteo de órdenes agrupadas por estado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/ordenesPorEstado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "ordenesPorEstado"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar conteo de órdenes agrupadas por estado",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/estadisticas/ordenesPorEstado",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "estadisticas",
+                "ordenesPorEstado"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 25 Nov 2026 03:08:07 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"estado\": \"entregada\",\n    \"cantidad\": 2\n  },\n  {\n    \"estado\": \"cancelada\",\n    \"cantidad\": 1\n  },\n  {\n    \"estado\": \"pendiente_autorizacion\",\n    \"cantidad\": 1\n  },\n  {\n    \"estado\": \"recibida\",\n    \"cantidad\": 1\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consultar métricas de tiempos de atención",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/tiemposAtencion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "tiemposAtencion"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar métricas de tiempos de atención",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/estadisticas/tiemposAtencion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "estadisticas",
+                "tiemposAtencion"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 25 Nov 2026 03:09:48 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"totalOrdenesEntregadas\": 2,\n  \"promedioHorasAtencion\": 5.6,\n  \"promedioDiasAtencion\": 0.23,\n  \"minimoHorasAtencion\": 2,\n  \"maximoHorasAtencion\": 9\n}"
+        }
+      ]
+    },
+    {
+      "name": "Consultar resumen y distribución de valoraciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/valoraciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "valoraciones"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Consultar resumen y distribución de valoraciones",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/UAO/apirest/estadisticas/valoraciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "UAO",
+                "apirest",
+                "estadisticas",
+                "valoraciones"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 25 Nov 2026 03:11:19 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"totalValoraciones\": 1,\n  \"promedioCalificacion\": 5,\n  \"calificacionMinima\": 5,\n  \"calificacionMaxima\": 5,\n  \"distribucion\": [\n    {\n      \"calificacion\": 5,\n      \"cantidad\": 1\n    }\n  ]\n}"
+        }
+      ]
+    }
+  ]
+}
