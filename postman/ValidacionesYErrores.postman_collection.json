@@ -238,6 +238,83 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Consultar estadísticas de servicios más solicitados y autorizados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/serviciosMasSolicitados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "serviciosMasSolicitados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar distribución de órdenes de servicio por estado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/ordenesPorEstado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "ordenesPorEstado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar tiempos promedio, mínimo y máximo de atención en órdenes entregadas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/UAO/apirest/estadisticas/tiemposAtencion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "UAO",
+            "apirest",
+            "estadisticas",
+            "tiemposAtencion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar estadísticas y distribución de valoraciones del servicio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
     }
   ]
 }
